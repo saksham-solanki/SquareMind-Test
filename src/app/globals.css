@@ -2,21 +2,31 @@
 
 @theme inline {
   --color-ink: #0D0D0D;
+  --color-ink-soft: #1A1A1A;
   --color-chalk: #FAFAF7;
+  --color-cream: #F5F0E8;
+  --color-cream-dark: #EDE5D8;
   --color-sage: #2A6F5A;
   --color-sage-deep: #1E5643;
   --color-sage-light: #E8F0ED;
+  --color-sage-muted: #3D8B72;
   --color-warm: #F5F0E8;
-  --color-gray-400: #A0A09C;
-  --color-gray-500: #6E6E6A;
-  --color-gray-600: #484844;
+  --color-warm-dark: #EDE5D8;
+  --color-gray-100: #F8F7F5;
+  --color-gray-200: #EDECEA;
+  --color-gray-300: #D4D3D0;
+  --color-gray-400: #9E9D99;
+  --color-gray-500: #6B6A66;
+  --color-gray-600: #3D3D39;
+  --color-red: #C0392B;
+  --color-gold: #C4980A;
 
   --font-serif: "Instrument Serif", Georgia, serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
 @layer base {
-  * {
+  *, *::before, *::after {
     box-sizing: border-box;
   }
 
@@ -28,9 +38,14 @@
     background: var(--color-chalk);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
+
+  img { max-width: 100%; display: block; }
+  button { font-family: var(--font-sans); cursor: pointer; }
 }
 
 @keyframes pulse-dot {

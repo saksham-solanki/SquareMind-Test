@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -10,9 +13,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SquareMind — Real Estate Intelligence",
+  title: "SquareMind — India's Independent Real Estate Investment Advisory",
   description:
-    "SquareMind is India's first curated distressed property deal room. Verified deals at 15-35% below market.",
+    "India's first independent real estate investment advisory. Zero builder commissions. Data-backed advice for HNIs and NRIs.",
 };
 
 export default function RootLayout({
@@ -30,7 +33,10 @@ export default function RootLayout({
       </head>
       <body className={`${dmSans.variable} font-sans antialiased`}>
         <Navbar />
-        <main className="pt-16">{children}</main>
+        <main className="pt-20">{children}</main>
+        <Footer />
+        <WhatsAppFloat />
+        <StickyMobileCTA />
       </body>
     </html>
   );
