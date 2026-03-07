@@ -20,7 +20,7 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-const siteUrl = "https://saksham-solanki.github.io/SquareMind-Test";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://squaremind.in";
 
 export const metadata: Metadata = {
   title: {
