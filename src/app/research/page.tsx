@@ -6,6 +6,11 @@ import DownloadGate from "@/components/DownloadGate";
 export const metadata: Metadata = {
   title: "Real Estate Research Reports — Builder Trust Index, City Ratings | SquareMind",
   description: "Independent, data-driven research on Indian real estate. Builder Trust Index, City Ratings, NRI Guides. Free to download.",
+  openGraph: {
+    title: "Real Estate Research Reports — Builder Trust Index, City Ratings",
+    description: "Independent, data-driven research on Indian real estate. Free to download.",
+    url: "/research",
+  },
 };
 
 const reports = [

@@ -6,6 +6,11 @@ import FAQList from "@/components/FAQList";
 export const metadata: Metadata = {
   title: "Real Estate Investment Advisory FAQ — SquareMind",
   description: "Everything you're wondering about SquareMind's free consultation, advisory fees, NRI services, and how we're different from brokers. Answered honestly.",
+  openGraph: {
+    title: "Real Estate Investment Advisory FAQ — SquareMind",
+    description: "Everything you're wondering about SquareMind, answered honestly.",
+    url: "/faq",
+  },
 };
 
 const faqItems = [
@@ -43,9 +48,23 @@ const faqItems = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function FAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="mx-auto max-w-[1200px] px-6 lg:px-14 pt-5">
         <nav className="text-[14px] text-gray-400" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-sage transition-colors">Home</Link>

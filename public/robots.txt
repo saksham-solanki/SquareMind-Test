@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saksham-solanki.github.io/SquareMind-Test/sitemap.xml

@@ -5,6 +5,11 @@ import FadeUp from "@/components/FadeUp";
 export const metadata: Metadata = {
   title: "About SquareMind — India's Independent Real Estate Investment Advisory",
   description: "Why SquareMind exists: every source of real estate advice in India has a hidden incentive. We built India's first independent, data-backed real estate advisory to fix that.",
+  openGraph: {
+    title: "About SquareMind — India's Independent Real Estate Investment Advisory",
+    description: "Why SquareMind exists: every source of real estate advice in India has a hidden incentive.",
+    url: "/about",
+  },
 };
 
 const values = [

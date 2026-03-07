@@ -1,6 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
 import HeroForm from "@/components/HeroForm";
+
+export const metadata: Metadata = {
+  title: "SquareMind — India's Independent Real Estate Investment Advisory",
+  description:
+    "India's first independent real estate investment advisory. Zero builder commissions. Data-backed advice for HNIs and NRIs. Book a free strategy call today.",
+  openGraph: {
+    title: "SquareMind — India's Independent Real Estate Investment Advisory",
+    description: "Zero builder commissions. Data-backed real estate advice for serious investors.",
+    url: "/",
+  },
+};
 
 const stats = [
   { number: "\u20B9240Cr+", label: "Investment decisions guided" },
@@ -101,14 +113,9 @@ export default function HomePage() {
                 </div>
               </FadeUp>
               <FadeUp delay={0.2}>
-                <div className="flex flex-wrap gap-12 mt-16 pt-10 border-t border-gray-200">
-                  {stats.slice(0, 3).map((s) => (
-                    <div key={s.label} className="text-left">
-                      <div className="font-serif text-[36px] text-ink tracking-[-0.03em] leading-[1.1]">{s.number}</div>
-                      <div className="text-[13px] text-gray-400 tracking-[-0.01em] mt-1">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-[14px] text-gray-400 mt-16 pt-10 border-t border-gray-200 tracking-[-0.01em]">
+                  Free. Confidential. No sales pitch.
+                </p>
               </FadeUp>
             </div>
             <FadeUp delay={0.15}>

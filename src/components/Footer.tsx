@@ -81,8 +81,8 @@ export default function Footer() {
         <div className="mt-14 pt-7 border-t border-white/[0.06] text-[13px] flex flex-col sm:flex-row justify-between gap-4">
           <span>&copy; 2026 SquareMind. All rights reserved.</span>
           <span className="flex gap-7">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
+            <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link>
           </span>
         </div>
       </div>

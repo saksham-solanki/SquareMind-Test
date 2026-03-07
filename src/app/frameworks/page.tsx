@@ -5,6 +5,11 @@ import FadeUp from "@/components/FadeUp";
 export const metadata: Metadata = {
   title: "Real Estate Investment Frameworks — Due Diligence, City Selection | SquareMind",
   description: "Proprietary real estate investment frameworks: 7-Point Due Diligence, City Selection Matrix, Builder Trust Score, Portfolio Allocation Model.",
+  openGraph: {
+    title: "Real Estate Investment Frameworks — Due Diligence, City Selection",
+    description: "Proprietary real estate investment frameworks used by 1,200+ investors.",
+    url: "/frameworks",
+  },
 };
 
 const frameworks = [

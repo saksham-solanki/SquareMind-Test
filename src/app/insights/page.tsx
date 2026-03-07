@@ -6,6 +6,11 @@ import FilterPills from "@/components/FilterPills";
 export const metadata: Metadata = {
   title: "Real Estate Investment Insights & Analysis — SquareMind Blog",
   description: "Data-driven real estate investment analysis, builder reviews, NRI guides, and market intelligence. Independent research from SquareMind.",
+  openGraph: {
+    title: "Real Estate Investment Insights & Analysis — SquareMind Blog",
+    description: "Data-driven real estate investment analysis and market intelligence.",
+    url: "/insights",
+  },
 };
 
 const articles = [

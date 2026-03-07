@@ -5,6 +5,11 @@ import FadeUp from "@/components/FadeUp";
 export const metadata: Metadata = {
   title: "Real Estate Investment Case Studies — NRI & HNI Outcomes | SquareMind",
   description: "Real case studies showing how investors made smarter decisions with SquareMind. Anonymized but detailed. Real scenarios, real numbers, real outcomes.",
+  openGraph: {
+    title: "Real Estate Investment Case Studies — NRI & HNI Outcomes",
+    description: "Real case studies showing how investors made smarter decisions with SquareMind.",
+    url: "/case-studies",
+  },
 };
 
 const cases = [

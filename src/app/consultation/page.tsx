@@ -6,6 +6,11 @@ import ConsultForm from "@/components/ConsultForm";
 export const metadata: Metadata = {
   title: "Free Real Estate Investment Strategy Call — SquareMind",
   description: "Book a free 30-minute real estate investment strategy call. No sales pitch. No broker BS. Just honest, data-backed advice from independent advisors.",
+  openGraph: {
+    title: "Free Real Estate Investment Strategy Call — SquareMind",
+    description: "Book a free 30-minute strategy call. No sales pitch. No broker BS.",
+    url: "/consultation",
+  },
 };
 
 const features = [
