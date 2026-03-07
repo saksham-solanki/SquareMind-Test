@@ -59,9 +59,9 @@ export default function Navbar() {
           ))}
           <Link
             href="/consultation"
-            className="bg-ink text-white px-7 py-3 rounded-full text-[14px] font-semibold tracking-[-0.01em] hover:bg-gray-600 hover:scale-[1.03] transition-all duration-300"
+            className="bg-ink text-white px-7 py-3 rounded-full text-[14px] font-semibold tracking-[-0.01em] hover:bg-sage hover:scale-[1.03] transition-all duration-300"
           >
-            Get started
+            Book Free Call
           </Link>
         </div>
 
@@ -102,9 +102,9 @@ export default function Navbar() {
           <Link
             href="/consultation"
             onClick={() => setMobileOpen(false)}
-            className="block text-center bg-ink text-white text-[15px] font-semibold px-7 py-3 rounded-full"
+            className="block text-center bg-ink text-white text-[15px] font-semibold px-7 py-3 rounded-full hover:bg-sage transition-colors duration-300"
           >
-            Get started
+            Book Free Call
           </Link>
         </div>
       </div>

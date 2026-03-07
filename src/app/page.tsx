@@ -73,14 +73,14 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(92vh-80px)] gap-12 lg:gap-20 pt-10">
             <div className="flex-1">
               <FadeUp>
-                <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-sage mb-4 block">
+                <h1 className="text-[13px] font-semibold tracking-[0.08em] uppercase text-sage mb-4 block">
                   India&apos;s Independent Real Estate Advisory
-                </span>
+                </h1>
               </FadeUp>
               <FadeUp delay={0.05}>
-                <h1 className="font-serif text-[clamp(48px,6.5vw,88px)] leading-[1.04] tracking-[-0.035em] text-ink max-w-[900px]">
+                <h2 className="font-serif text-[clamp(48px,6.5vw,88px)] leading-[1.04] tracking-[-0.035em] text-ink max-w-[900px]">
                   Invest in real estate<br /><em className="italic text-sage">with your eyes open.</em>
-                </h1>
+                </h2>
               </FadeUp>
               <FadeUp delay={0.1}>
                 <p className="text-[20px] leading-[1.65] text-gray-500 max-w-[560px] mt-7 tracking-[-0.01em]">
@@ -89,12 +89,15 @@ export default function HomePage() {
               </FadeUp>
               <FadeUp delay={0.15}>
                 <div className="flex gap-4 mt-11 flex-wrap items-center">
-                  <Link href="/consultation" className="inline-flex items-center gap-2 bg-ink text-white px-9 py-4 rounded-full text-[16px] font-semibold tracking-[-0.01em] hover:bg-gray-600 hover:scale-[1.03] transition-all duration-300">
+                  <Link href="/consultation" className="inline-flex items-center gap-2 bg-ink text-white px-9 py-4 rounded-full text-[16px] font-semibold tracking-[-0.01em] hover:bg-sage hover:scale-[1.03] transition-all duration-300">
                     Get my free strategy session
                   </Link>
                   <Link href="/research" className="text-[16px] font-semibold text-ink inline-flex items-center gap-1.5 border-b-[1.5px] border-ink pb-0.5 hover:text-sage hover:border-sage transition-all duration-300 tracking-[-0.01em]">
                     Read our research &rarr;
                   </Link>
+                </div>
+                <div className="mt-3.5 text-[13px] text-gray-500 tracking-[-0.01em] flex items-center gap-2">
+                  <span className="text-sage font-bold">&#10003;</span> 100% Free. No spam guarantee.
                 </div>
               </FadeUp>
               <FadeUp delay={0.2}>

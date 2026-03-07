@@ -15,7 +15,23 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "SquareMind — India's Independent Real Estate Investment Advisory",
   description:
-    "India's first independent real estate investment advisory. Zero builder commissions. Data-backed advice for HNIs and NRIs.",
+    "India's first independent real estate investment advisory for HNIs and NRIs. Zero broker commissions. Data-backed portfolio strategy, RERA analysis, and due diligence.",
+  keywords: ["India real estate", "NRI investment", "HNI portfolio advice", "independent real estate advisory", "property investment India", "Mumbai real estate", "Bangalore real estate"],
+  metadataBase: new URL("https://squaremind.in"),
+  robots: "index, follow",
+  openGraph: {
+    title: "SquareMind — Independent Real Estate Investment Advisory",
+    description: "Don't invest in real estate until you talk to us. Zero builder commissions. Data-backed advice for HNIs and NRIs.",
+    url: "https://squaremind.in",
+    siteName: "SquareMind",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SquareMind — Independent Real Estate Investment Advisory",
+    description: "Data-backed real estate advice. Zero builder commissions.",
+  },
 };
 
 export default function RootLayout({
