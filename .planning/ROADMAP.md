@@ -12,7 +12,7 @@ SquareMind's website revamp transforms a static GitHub Pages site into a live le
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Ad Launch Pipeline** - Vercel deploy, Tri-City landing page, lead capture form, Meta Pixel, and Calendly -- everything needed to start running paid ads
+- [x] **Phase 1: Ad Launch Pipeline** - Vercel deploy, Tri-City landing page, lead capture form, Meta Pixel, and Calendly -- everything needed to start running paid ads
 - [ ] **Phase 2: Site-Wide Forms & Analytics** - Wire up all remaining forms, booking CTAs, analytics, and notifications across the full site
 - [ ] **Phase 3: UX & Design Polish** - Smooth transitions, micro-interactions, animated counters, mobile nav upgrade, and modern UI patterns to make the site feel premium and dynamic
 - [ ] **Phase 4: Blog Engine** - Replace hardcoded posts.ts with MDX-based content system that scales to 300+ posts
@@ -34,9 +34,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Infrastructure: clean next.config, route group migration, dynamic sitemap/robots
-- [ ] 01-02-PLAN.md — Lead capture pipeline: UTM utils, API route, form component
-- [ ] 01-03-PLAN.md — Landing page, Meta Pixel, GA4, Calendly integration
+- [x] 01-01-PLAN.md — Infrastructure: clean next.config, route group migration, dynamic sitemap/robots
+- [x] 01-02-PLAN.md — Lead capture pipeline: UTM utils, API route, form component
+- [x] 01-03-PLAN.md — Landing page, Meta Pixel, GA4, Calendly integration
 
 ### Phase 2: Site-Wide Forms & Analytics
 **Goal**: Every form on the site captures leads to Supabase with UTM tracking, the team gets instant notifications, and all analytics tools (GA4, Hotjar, Meta Pixel events) are running site-wide
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Ad Launch Pipeline | 2/3 | In Progress|  |
+| 1. Ad Launch Pipeline | 3/3 | Complete | 2026-03-08 |
 | 2. Site-Wide Forms & Analytics | 0/3 | Not started | - |
 | 3. UX & Design Polish | 0/3 | Not started | - |
 | 4. Blog Engine | 0/3 | Not started | - |

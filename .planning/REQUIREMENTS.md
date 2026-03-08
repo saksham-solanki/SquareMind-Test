@@ -30,25 +30,25 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 - [ ] **BOOK-01**: "Book a Call" CTAs across the site open Calendly scheduling popup
 - [ ] **BOOK-02**: Consultation page embeds Calendly inline or popup
-- [ ] **BOOK-03**: Landing page has Calendly booking integration
+- [x] **BOOK-03**: Landing page has Calendly booking integration
 - [ ] **BOOK-04**: WhatsApp float button uses real business WhatsApp number (not placeholder)
 
 ### Analytics & Tracking
 
 - [ ] **ANAL-01**: Google Analytics 4 installed site-wide with pageview tracking
-- [ ] **ANAL-02**: Meta Pixel installed site-wide for audience building
-- [ ] **ANAL-03**: Meta Pixel fires Lead conversion event on form submissions
+- [x] **ANAL-02**: Meta Pixel installed site-wide for audience building
+- [x] **ANAL-03**: Meta Pixel fires Lead conversion event on form submissions
 - [ ] **ANAL-04**: Meta Pixel fires Schedule conversion event on Calendly booking
 - [ ] **ANAL-05**: Hotjar installed on key pages (homepage, consultation, landing page)
 - [ ] **ANAL-06**: GA4 tracks custom events: form_submit, calendly_open, whatsapp_click
 
 ### Landing Pages
 
-- [ ] **LAND-01**: Tri-City investment guide landing page ("/invest/tri-city") for Meta ads
-- [ ] **LAND-02**: Landing page has distraction-free layout (no main nav, focused CTA)
+- [x] **LAND-01**: Tri-City investment guide landing page ("/invest/tri-city") for Meta ads
+- [x] **LAND-02**: Landing page has distraction-free layout (no main nav, focused CTA)
 - [x] **LAND-03**: Landing page has lead capture form connected to Supabase with UTM tracking
-- [ ] **LAND-04**: Landing page has Calendly booking CTA
-- [ ] **LAND-05**: Landing page is optimized for mobile (70%+ traffic from Meta ads is mobile)
+- [x] **LAND-04**: Landing page has Calendly booking CTA
+- [x] **LAND-05**: Landing page is optimized for mobile (70%+ traffic from Meta ads is mobile)
 
 ### UX & Design Polish
 
@@ -160,19 +160,19 @@ Deferred to future release. Tracked but not in current roadmap.
 | LEAD-08 | Phase 1 | Complete |
 | BOOK-01 | Phase 2 | Pending |
 | BOOK-02 | Phase 2 | Pending |
-| BOOK-03 | Phase 1 | Pending |
+| BOOK-03 | Phase 1 | Complete |
 | BOOK-04 | Phase 2 | Pending |
 | ANAL-01 | Phase 2 | Pending |
-| ANAL-02 | Phase 1 | Pending |
-| ANAL-03 | Phase 1 | Pending |
+| ANAL-02 | Phase 1 | Complete |
+| ANAL-03 | Phase 1 | Complete |
 | ANAL-04 | Phase 2 | Pending |
 | ANAL-05 | Phase 2 | Pending |
 | ANAL-06 | Phase 2 | Pending |
-| LAND-01 | Phase 1 | Pending |
-| LAND-02 | Phase 1 | Pending |
+| LAND-01 | Phase 1 | Complete |
+| LAND-02 | Phase 1 | Complete |
 | LAND-03 | Phase 1 | Complete |
-| LAND-04 | Phase 1 | Pending |
-| LAND-05 | Phase 1 | Pending |
+| LAND-04 | Phase 1 | Complete |
+| LAND-05 | Phase 1 | Complete |
 | UX-01 | Phase 3 | Pending |
 | UX-02 | Phase 3 | Pending |
 | UX-03 | Phase 3 | Pending |
