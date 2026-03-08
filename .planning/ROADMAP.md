@@ -31,12 +31,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Submitting the landing page form saves lead data (name, email, phone, UTM params, source page) to Supabase `leads` table
   4. Meta Pixel fires a Lead conversion event when the landing page form is submitted (verifiable via Meta Pixel Helper)
   5. "Book a Call" CTA on the landing page opens Calendly scheduling
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md — Infrastructure: clean next.config, route group migration, dynamic sitemap/robots
+- [ ] 01-02-PLAN.md — Lead capture pipeline: UTM utils, API route, form component
+- [ ] 01-03-PLAN.md — Landing page, Meta Pixel, GA4, Calendly integration
 
 ### Phase 2: Site-Wide Forms & Analytics
 **Goal**: Every form on the site captures leads to Supabase with UTM tracking, the team gets instant notifications, and all analytics tools (GA4, Hotjar, Meta Pixel events) are running site-wide
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Ad Launch Pipeline | 0/3 | Not started | - |
+| 1. Ad Launch Pipeline | 0/3 | Planned | - |
 | 2. Site-Wide Forms & Analytics | 0/3 | Not started | - |
 | 3. UX & Design Polish | 0/3 | Not started | - |
 | 4. Blog Engine | 0/3 | Not started | - |
