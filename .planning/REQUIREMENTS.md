@@ -28,19 +28,19 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 ### Booking & Conversion
 
-- [ ] **BOOK-01**: "Book a Call" CTAs across the site open Calendly scheduling popup
-- [ ] **BOOK-02**: Consultation page embeds Calendly inline or popup
+- [x] **BOOK-01**: "Book a Call" CTAs across the site open Calendly scheduling popup
+- [x] **BOOK-02**: Consultation page embeds Calendly inline or popup
 - [x] **BOOK-03**: Landing page has Calendly booking integration
-- [ ] **BOOK-04**: WhatsApp float button uses real business WhatsApp number (not placeholder)
+- [x] **BOOK-04**: WhatsApp float button uses real business WhatsApp number (not placeholder)
 
 ### Analytics & Tracking
 
-- [ ] **ANAL-01**: Google Analytics 4 installed site-wide with pageview tracking
+- [x] **ANAL-01**: Google Analytics 4 installed site-wide with pageview tracking
 - [x] **ANAL-02**: Meta Pixel installed site-wide for audience building
 - [x] **ANAL-03**: Meta Pixel fires Lead conversion event on form submissions
-- [ ] **ANAL-04**: Meta Pixel fires Schedule conversion event on Calendly booking
-- [ ] **ANAL-05**: Hotjar installed on key pages (homepage, consultation, landing page)
-- [ ] **ANAL-06**: GA4 tracks custom events: form_submit, calendly_open, whatsapp_click
+- [x] **ANAL-04**: Meta Pixel fires Schedule conversion event on Calendly booking
+- [x] **ANAL-05**: Hotjar installed on key pages (homepage, consultation, landing page)
+- [x] **ANAL-06**: GA4 tracks custom events: form_submit, calendly_open, whatsapp_click
 
 ### Landing Pages
 
@@ -158,16 +158,16 @@ Deferred to future release. Tracked but not in current roadmap.
 | LEAD-06 | Phase 1 | Complete |
 | LEAD-07 | Phase 2 | Pending |
 | LEAD-08 | Phase 1 | Complete |
-| BOOK-01 | Phase 2 | Pending |
-| BOOK-02 | Phase 2 | Pending |
+| BOOK-01 | Phase 2 | Complete |
+| BOOK-02 | Phase 2 | Complete |
 | BOOK-03 | Phase 1 | Complete |
-| BOOK-04 | Phase 2 | Pending |
-| ANAL-01 | Phase 2 | Pending |
+| BOOK-04 | Phase 2 | Complete |
+| ANAL-01 | Phase 2 | Complete |
 | ANAL-02 | Phase 1 | Complete |
 | ANAL-03 | Phase 1 | Complete |
-| ANAL-04 | Phase 2 | Pending |
-| ANAL-05 | Phase 2 | Pending |
-| ANAL-06 | Phase 2 | Pending |
+| ANAL-04 | Phase 2 | Complete |
+| ANAL-05 | Phase 2 | Complete |
+| ANAL-06 | Phase 2 | Complete |
 | LAND-01 | Phase 1 | Complete |
 | LAND-02 | Phase 1 | Complete |
 | LAND-03 | Phase 1 | Complete |
