@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase-server";
+import { getSupabaseAdmin } from "@/lib/supabase-server";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -38,7 +38,8 @@ export async function POST(request: Request) {
   }
 
   // Insert into Supabase
-  const { error } = await supabaseAdmin.from("leads").insert({
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase.from("leads").insert({
     name,
     email,
     phone,
