@@ -1,20 +1,51 @@
 "use client";
 
 import { useState } from "react";
+import { getUTMParams } from "@/lib/utm";
+import { trackEvent } from "@/lib/meta-pixel";
 
 export default function DownloadGate({ reportName }: { reportName: string }) {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setError(null);
+
+    const fd = new FormData(e.currentTarget);
+    const email = fd.get("email") as string;
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          source_page: window.location.pathname,
+          form_type: "download_gate",
+          ...getUTMParams(),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        setLoading(false);
+        return;
+      }
+
       setSent(true);
-      setLoading(false);
+      trackEvent("Lead", { content_name: "download_gate" });
       setTimeout(() => setOpen(false), 2000);
-    }, 1000);
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -43,8 +74,14 @@ export default function DownloadGate({ reportName }: { reportName: string }) {
             <p className="text-[14px] text-gray-500 mb-5 leading-relaxed">
               {reportName} &mdash; enter your email and we&apos;ll send it to your inbox.
             </p>
+            {error && (
+              <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-[12px] text-[13px] text-red-700">
+                {error}
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
               <input
+                name="email"
                 type="email"
                 placeholder="your@email.com"
                 required
