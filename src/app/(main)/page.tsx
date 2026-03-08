@@ -4,6 +4,8 @@ import FadeUp from "@/components/FadeUp";
 import HeroForm from "@/components/HeroForm";
 import NewsletterForm from "@/components/NewsletterForm";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import CountUpStats from "@/components/CountUpStats";
+import { ParallaxHero } from "@/components/animations/ParallaxHero";
 
 export const metadata: Metadata = {
   title: "SquareMind — India's Independent Real Estate Investment Advisory",
@@ -15,13 +17,6 @@ export const metadata: Metadata = {
     url: "/",
   },
 };
-
-const stats = [
-  { number: "\u20B9240Cr+", label: "Investment decisions guided" },
-  { number: "4.9 \u2605", label: "Google rating" },
-  { number: "1,200+", label: "Investors advised" },
-  { number: "Zero", label: "Builder commissions" },
-];
 
 const contrastLeft = [
   "Brokers pushing projects they earn highest commission on",
@@ -83,9 +78,10 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="pb-20">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
-          <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(92vh-80px)] gap-12 lg:gap-20 pt-10">
-            <div className="flex-1">
+        <ParallaxHero>
+          <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
+            <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(92vh-80px)] gap-12 lg:gap-20 pt-10">
+              <div className="flex-1">
               <FadeUp>
                 <h1 className="text-[13px] font-semibold tracking-[0.08em] uppercase text-sage mb-4 block">
                   India&apos;s Independent Real Estate Advisory
@@ -103,10 +99,10 @@ export default function HomePage() {
               </FadeUp>
               <FadeUp delay={0.15}>
                 <div className="flex gap-4 mt-11 flex-wrap items-center">
-                  <Link href="/consultation" className="inline-flex items-center gap-2 bg-ink text-white px-9 py-4 rounded-full text-[16px] font-semibold tracking-[-0.01em] hover:bg-sage hover:scale-[1.03] transition-all duration-300">
+                  <Link href="/consultation" className="inline-flex items-center gap-2 bg-ink text-white px-9 py-4 rounded-full text-[16px] font-semibold tracking-[-0.01em] hover:bg-sage hover:scale-[1.03] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:outline-none">
                     Get my free strategy session
                   </Link>
-                  <Link href="/research" className="text-[16px] font-semibold text-ink inline-flex items-center gap-1.5 border-b-[1.5px] border-ink pb-0.5 hover:text-sage hover:border-sage transition-all duration-300 tracking-[-0.01em]">
+                  <Link href="/research" className="text-[16px] font-semibold text-ink inline-flex items-center gap-1.5 border-b-[1.5px] border-ink pb-0.5 hover:text-sage hover:border-sage transition-all duration-300 tracking-[-0.01em] focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:outline-none">
                     Read our research &rarr;
                   </Link>
                 </div>
@@ -123,21 +119,13 @@ export default function HomePage() {
             <FadeUp delay={0.15}>
               <HeroForm />
             </FadeUp>
+            </div>
           </div>
-        </div>
+        </ParallaxHero>
       </section>
 
       {/* STATS BAR */}
-      <FadeUp>
-        <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-b border-gray-200">
-          {stats.map((s, i) => (
-            <div key={s.label} className={`py-12 px-6 lg:px-10 text-center ${i < 3 ? "border-r border-gray-200 max-lg:[&:nth-child(2)]:border-r-0" : ""}`}>
-              <div className="font-serif text-[clamp(40px,4vw,56px)] tracking-[-0.03em] leading-none text-ink">{s.number}</div>
-              <div className="text-[14px] text-gray-400 mt-2 tracking-[-0.01em]">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </FadeUp>
+      <CountUpStats />
 
       {/* WHY WE EXIST */}
       <section className="py-[120px] max-lg:py-20">
@@ -191,7 +179,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
             {steps.map((step, i) => (
               <FadeUp key={step.num} delay={i * 0.1}>
-                <div className="bg-cream-dark rounded-[20px] p-11 max-lg:p-8 relative hover:-translate-y-1 transition-transform duration-400">
+                <div className="bg-cream-dark rounded-[20px] p-11 max-lg:p-8 relative hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-400">
                   <span className="absolute top-6 right-7 font-serif text-[56px] text-cream-dark leading-none" style={{ color: "rgba(237,229,216,1)" }}>{step.num}</span>
                   <h3 className="font-serif text-[24px] tracking-[-0.02em] mt-2 mb-3.5">{step.title}</h3>
                   <p className="text-[15px] text-gray-500 leading-[1.65] tracking-[-0.01em]">{step.desc}</p>
@@ -203,7 +191,7 @@ export default function HomePage() {
       </section>
 
       {/* WHO WE SERVE */}
-      <section className="bg-ink py-[120px] max-lg:py-20">
+      <section className="bg-ink bg-[radial-gradient(ellipse_at_top_right,rgba(42,111,90,0.15),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(42,111,90,0.1),transparent_50%)] py-[120px] max-lg:py-20">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
           <FadeUp>
             <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-sage-muted mb-4 block">Built for Serious Investors</span>
@@ -214,7 +202,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
             {audiences.map((a, i) => (
               <FadeUp key={a.title} delay={i * 0.1}>
-                <div className="border border-white/[0.08] rounded-[20px] p-8 hover:border-white/20 hover:-translate-y-1 hover:bg-white/[0.03] transition-all duration-400">
+                <div className="border border-white/[0.08] rounded-[20px] p-8 hover:border-white/20 hover:-translate-y-1 hover:bg-white/[0.03] hover:shadow-[0_8px_32px_rgba(42,111,90,0.15)] transition-all duration-400">
                   <div className="text-[32px] mb-4">{a.icon}</div>
                   <h4 className="text-white text-[17px] font-semibold tracking-[-0.02em]">{a.title}</h4>
                   <p className="text-gray-400 text-[14px] mt-2 leading-relaxed tracking-[-0.01em]">{a.desc}</p>
@@ -253,7 +241,7 @@ export default function HomePage() {
                   Insights you won&apos;t find<br />on a broker&apos;s WhatsApp.
                 </h2>
               </div>
-              <Link href="/insights" className="inline-flex items-center gap-2 bg-transparent text-ink px-9 py-4 rounded-full text-[16px] font-semibold border-[1.5px] border-gray-300 hover:border-ink hover:bg-ink hover:text-white transition-all duration-300 tracking-[-0.01em] mb-2">
+              <Link href="/insights" className="inline-flex items-center gap-2 bg-transparent text-ink px-9 py-4 rounded-full text-[16px] font-semibold border-[1.5px] border-gray-300 hover:border-ink hover:bg-ink hover:text-white transition-all duration-300 tracking-[-0.01em] mb-2 focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:outline-none">
                 View all insights &rarr;
               </Link>
             </div>
@@ -294,7 +282,7 @@ export default function HomePage() {
       <section className="pb-[120px] max-lg:pb-20">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
           <FadeUp>
-            <div className="bg-ink rounded-[28px] py-20 px-12 max-lg:py-12 max-lg:px-7 text-center">
+            <div className="bg-gradient-to-br from-ink via-ink to-sage-deep rounded-[28px] py-20 px-12 max-lg:py-12 max-lg:px-7 text-center">
               <h2 className="font-serif text-[clamp(32px,3.5vw,48px)] tracking-[-0.03em] text-white">Ready to invest smarter?</h2>
               <p className="text-[18px] text-white/65 mt-4 mb-9 max-w-[500px] mx-auto tracking-[-0.01em]">
                 Book a free 30-minute strategy call. No sales pitch. No commitment. Just honest advice backed by data.
