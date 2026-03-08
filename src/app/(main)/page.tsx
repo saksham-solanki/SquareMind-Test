@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
 import HeroForm from "@/components/HeroForm";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export const metadata: Metadata = {
   title: "SquareMind — India's Independent Real Estate Investment Advisory",
@@ -288,12 +289,7 @@ export default function HomePage() {
               <p className="text-[16px] text-gray-500 mt-3 mb-7 tracking-[-0.01em]">
                 The exact framework our advisors use to evaluate every property. Free PDF. Used by 1,200+ investors.
               </p>
-              <form className="flex flex-col sm:flex-row gap-2.5 max-w-[440px] mx-auto">
-                <input type="email" placeholder="your@email.com" required className="flex-1 px-5 py-3.5 border-[1.5px] border-gray-300 rounded-full text-[15px] bg-white text-ink focus:outline-none focus:border-ink transition-colors tracking-[-0.01em]" />
-                <button type="submit" className="bg-ink text-white px-7 py-3.5 rounded-full text-[15px] font-semibold whitespace-nowrap hover:bg-gray-600 hover:scale-[1.03] transition-all duration-300 tracking-[-0.01em]">
-                  Get free checklist
-                </button>
-              </form>
+              <NewsletterForm />
               <p className="text-[12px] text-gray-400 mt-3.5 tracking-[-0.01em]">
                 Also get The SquareMind Brief &mdash; one insight per week. Unsubscribe anytime.
               </p>

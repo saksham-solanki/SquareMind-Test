@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeUp from "@/components/FadeUp";
+import NewsletterForm from "@/components/NewsletterForm";
 import { getPostBySlug, getRelatedPosts, posts } from "@/lib/posts";
 
 interface Props {
@@ -123,12 +124,7 @@ export default async function PostPage({ params }: Props) {
               <p className="text-[13px] font-semibold text-sage uppercase tracking-[0.08em] mb-2">Free Resource</p>
               <h3 className="font-serif text-[24px] tracking-[-0.02em] mb-3">Get the 7-Point Due Diligence Checklist</h3>
               <p className="text-[15px] text-gray-500 mb-6 max-w-[480px] mx-auto">The exact framework SquareMind uses to evaluate every property before recommending it to a client.</p>
-              <form className="flex flex-col sm:flex-row gap-2.5 max-w-[400px] mx-auto">
-                <input type="email" placeholder="your@email.com" required className="flex-1 px-5 py-3 border-[1.5px] border-gray-300 rounded-full text-[14px] bg-white text-ink focus:outline-none focus:border-ink transition-colors" />
-                <button type="submit" className="bg-ink text-white px-6 py-3 rounded-full text-[14px] font-semibold whitespace-nowrap hover:bg-gray-700 transition-all">
-                  Get Checklist
-                </button>
-              </form>
+              <NewsletterForm />
             </div>
 
             <div
