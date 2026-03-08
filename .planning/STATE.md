@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-08T19:13:28.319Z"
-last_activity: 2026-03-08 -- Completed 01-01 (Vercel Infrastructure & Route Groups)
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-08T19:18:07.079Z"
+last_activity: 2026-03-08 -- Completed 01-02 (Lead Capture Pipeline)
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
-  percent: 33
+  completed_plans: 2
+  percent: 67
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-08)
 ## Current Position
 
 Phase: 1 of 6 (Ad Launch Pipeline)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: Executing phase 1
-Last activity: 2026-03-08 -- Completed 01-01 (Vercel Infrastructure & Route Groups)
+Last activity: 2026-03-08 -- Completed 01-02 (Lead Capture Pipeline)
 
-Progress: [███░░░░░░░] 33%
+Progress: [███████░░░] 67%
 
 ## Performance Metrics
 
@@ -51,6 +51,7 @@ Progress: [███░░░░░░░] 33%
 
 *Updated after each plan completion*
 | Phase 01 P01 | 2min | 3 tasks | 7 files |
+| Phase 01 P02 | 3min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,8 @@ Recent decisions affecting current work:
 - [Roadmap revision]: Added Phase 3 (UX & Design Polish) with 10 new UX requirements per user request; shifted Blog Engine to Phase 4, Tools to Phase 5, Content to Phase 6
 - [Phase 01]: Route group pattern: (main) for chrome, (landing) for distraction-free pages
 - [Phase 01]: Dynamic metadata API for sitemap/robots instead of static files
+- [Phase 01]: Lazy-init supabaseAdmin via getSupabaseAdmin() to prevent build-time crashes
+- [Phase 01]: UTM params stored in sessionStorage for cross-page persistence within session
 
 ### Pending Todos
 
@@ -77,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-08T19:13:28.316Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-03-08T19:17:08Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None

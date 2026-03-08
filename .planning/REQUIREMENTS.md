@@ -21,10 +21,10 @@ Requirements for the full revamp. Each maps to roadmap phases.
 - [ ] **LEAD-02**: ConsultForm (consultation page) saves submissions to Supabase `leads` table
 - [ ] **LEAD-03**: DownloadGate (research page) saves email to Supabase `leads` table
 - [ ] **LEAD-04**: Newsletter signup form saves email to Supabase `leads` table
-- [ ] **LEAD-05**: All forms capture UTM parameters (source, medium, campaign, content, term) via sessionStorage
-- [ ] **LEAD-06**: All forms capture source page URL (which page the user submitted from)
+- [x] **LEAD-05**: All forms capture UTM parameters (source, medium, campaign, content, term) via sessionStorage
+- [x] **LEAD-06**: All forms capture source page URL (which page the user submitted from)
 - [ ] **LEAD-07**: Form submissions trigger instant email notification to team via Resend
-- [ ] **LEAD-08**: Unified `leads` table in Supabase with columns: name, email, phone, budget, location, source_page, utm_source, utm_medium, utm_campaign, form_type, created_at
+- [x] **LEAD-08**: Unified `leads` table in Supabase with columns: name, email, phone, budget, location, source_page, utm_source, utm_medium, utm_campaign, form_type, created_at
 
 ### Booking & Conversion
 
@@ -46,7 +46,7 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 - [ ] **LAND-01**: Tri-City investment guide landing page ("/invest/tri-city") for Meta ads
 - [ ] **LAND-02**: Landing page has distraction-free layout (no main nav, focused CTA)
-- [ ] **LAND-03**: Landing page has lead capture form connected to Supabase with UTM tracking
+- [x] **LAND-03**: Landing page has lead capture form connected to Supabase with UTM tracking
 - [ ] **LAND-04**: Landing page has Calendly booking CTA
 - [ ] **LAND-05**: Landing page is optimized for mobile (70%+ traffic from Meta ads is mobile)
 
@@ -154,10 +154,10 @@ Deferred to future release. Tracked but not in current roadmap.
 | LEAD-02 | Phase 2 | Pending |
 | LEAD-03 | Phase 2 | Pending |
 | LEAD-04 | Phase 2 | Pending |
-| LEAD-05 | Phase 1 | Pending |
-| LEAD-06 | Phase 1 | Pending |
+| LEAD-05 | Phase 1 | Complete |
+| LEAD-06 | Phase 1 | Complete |
 | LEAD-07 | Phase 2 | Pending |
-| LEAD-08 | Phase 1 | Pending |
+| LEAD-08 | Phase 1 | Complete |
 | BOOK-01 | Phase 2 | Pending |
 | BOOK-02 | Phase 2 | Pending |
 | BOOK-03 | Phase 1 | Pending |
@@ -170,7 +170,7 @@ Deferred to future release. Tracked but not in current roadmap.
 | ANAL-06 | Phase 2 | Pending |
 | LAND-01 | Phase 1 | Pending |
 | LAND-02 | Phase 1 | Pending |
-| LAND-03 | Phase 1 | Pending |
+| LAND-03 | Phase 1 | Complete |
 | LAND-04 | Phase 1 | Pending |
 | LAND-05 | Phase 1 | Pending |
 | UX-01 | Phase 3 | Pending |

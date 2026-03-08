@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Ad Launch Pipeline | 1/3 | In Progress|  |
+| 1. Ad Launch Pipeline | 2/3 | In Progress|  |
 | 2. Site-Wide Forms & Analytics | 0/3 | Not started | - |
 | 3. UX & Design Polish | 0/3 | Not started | - |
 | 4. Blog Engine | 0/3 | Not started | - |
