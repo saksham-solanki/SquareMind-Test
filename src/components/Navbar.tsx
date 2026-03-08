@@ -34,10 +34,10 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 backdrop-blur-[24px] transition-all duration-400",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-400",
         scrolled
-          ? "bg-chalk/95 shadow-[0_1px_0_rgba(0,0,0,0.06)]"
-          : "bg-chalk/85"
+          ? "backdrop-blur-2xl bg-chalk/80 shadow-[0_1px_0_rgba(0,0,0,0.06)]"
+          : "backdrop-blur-xl bg-chalk/60"
       )}
     >
       <nav className="mx-auto max-w-[1200px] px-6 lg:px-14 flex items-center justify-between h-20">

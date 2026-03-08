@@ -165,7 +165,7 @@ export default function HomePage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="bg-cream py-[120px] max-lg:py-20">
+      <section className="bg-gradient-to-br from-cream to-cream-dark/30 py-[120px] max-lg:py-20">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
           <FadeUp>
             <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-sage mb-4 block">How It Works</span>

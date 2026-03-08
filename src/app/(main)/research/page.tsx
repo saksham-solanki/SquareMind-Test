@@ -79,7 +79,7 @@ export default function ResearchPage() {
       <section className="pb-[120px] max-lg:pb-20">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
           <FadeUp>
-            <div className="bg-ink rounded-[28px] py-20 px-12 max-lg:py-12 max-lg:px-7 text-center">
+            <div className="bg-gradient-to-br from-ink via-ink to-sage-deep rounded-[28px] py-20 px-12 max-lg:py-12 max-lg:px-7 text-center">
               <h2 className="font-serif text-[clamp(32px,3.5vw,48px)] tracking-[-0.03em] text-white">Want a personalized analysis?</h2>
               <p className="text-[18px] text-white/65 mt-4 mb-9 max-w-[500px] mx-auto tracking-[-0.01em]">
                 Our reports cover the market. Our advisors cover YOUR specific investment. Book a free call.
