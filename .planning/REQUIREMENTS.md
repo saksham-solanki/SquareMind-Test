@@ -17,13 +17,13 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 ### Lead Capture & Forms
 
-- [ ] **LEAD-01**: HeroForm (homepage) saves submissions to Supabase `leads` table
-- [ ] **LEAD-02**: ConsultForm (consultation page) saves submissions to Supabase `leads` table
-- [ ] **LEAD-03**: DownloadGate (research page) saves email to Supabase `leads` table
-- [ ] **LEAD-04**: Newsletter signup form saves email to Supabase `leads` table
+- [x] **LEAD-01**: HeroForm (homepage) saves submissions to Supabase `leads` table
+- [x] **LEAD-02**: ConsultForm (consultation page) saves submissions to Supabase `leads` table
+- [x] **LEAD-03**: DownloadGate (research page) saves email to Supabase `leads` table
+- [x] **LEAD-04**: Newsletter signup form saves email to Supabase `leads` table
 - [x] **LEAD-05**: All forms capture UTM parameters (source, medium, campaign, content, term) via sessionStorage
 - [x] **LEAD-06**: All forms capture source page URL (which page the user submitted from)
-- [ ] **LEAD-07**: Form submissions trigger instant email notification to team via Resend
+- [x] **LEAD-07**: Form submissions trigger instant email notification to team via Resend
 - [x] **LEAD-08**: Unified `leads` table in Supabase with columns: name, email, phone, budget, location, source_page, utm_source, utm_medium, utm_campaign, form_type, created_at
 
 ### Booking & Conversion
@@ -150,13 +150,13 @@ Deferred to future release. Tracked but not in current roadmap.
 | INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 1 | Complete |
 | INFRA-05 | Phase 1 | Complete |
-| LEAD-01 | Phase 2 | Pending |
-| LEAD-02 | Phase 2 | Pending |
-| LEAD-03 | Phase 2 | Pending |
-| LEAD-04 | Phase 2 | Pending |
+| LEAD-01 | Phase 2 | Complete |
+| LEAD-02 | Phase 2 | Complete |
+| LEAD-03 | Phase 2 | Complete |
+| LEAD-04 | Phase 2 | Complete |
 | LEAD-05 | Phase 1 | Complete |
 | LEAD-06 | Phase 1 | Complete |
-| LEAD-07 | Phase 2 | Pending |
+| LEAD-07 | Phase 2 | Complete |
 | LEAD-08 | Phase 1 | Complete |
 | BOOK-01 | Phase 2 | Complete |
 | BOOK-02 | Phase 2 | Complete |
