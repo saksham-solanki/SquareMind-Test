@@ -76,8 +76,8 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 ### Newsletter
 
-- [ ] **NEWS-01**: Newsletter signup form on homepage and blog pages collects email to Supabase
-- [ ] **NEWS-02**: Subscriber receives confirmation that they've been added (success state in UI)
+- [x] **NEWS-01**: Newsletter signup form on homepage and blog pages collects email to Supabase
+- [x] **NEWS-02**: Subscriber receives confirmation that they've been added (success state in UI)
 
 ### Interactive Tools
 
@@ -191,8 +191,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | BLOG-06 | Phase 4 | Pending |
 | BLOG-07 | Phase 4 | Pending |
 | BLOG-08 | Phase 4 | Pending |
-| NEWS-01 | Phase 2 | Pending |
-| NEWS-02 | Phase 2 | Pending |
+| NEWS-01 | Phase 2 | Complete |
+| NEWS-02 | Phase 2 | Complete |
 | TOOL-01 | Phase 5 | Pending |
 | TOOL-02 | Phase 5 | Pending |
 | TOOL-03 | Phase 5 | Pending |
