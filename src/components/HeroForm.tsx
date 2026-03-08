@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getUTMParams } from "@/lib/utm";
 import { trackEvent } from "@/lib/meta-pixel";
+import { trackFormSubmit } from "@/lib/analytics";
 
 export default function HeroForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -45,6 +46,7 @@ export default function HeroForm() {
 
       setSubmitted(true);
       trackEvent("Lead", { content_name: "hero_form" });
+      trackFormSubmit("hero");
     } catch {
       setError("Network error. Please check your connection and try again.");
     } finally {

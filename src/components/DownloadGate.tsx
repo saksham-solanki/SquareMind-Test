@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getUTMParams } from "@/lib/utm";
 import { trackEvent } from "@/lib/meta-pixel";
+import { trackFormSubmit } from "@/lib/analytics";
 
 export default function DownloadGate({ reportName }: { reportName: string }) {
   const [open, setOpen] = useState(false);
@@ -40,6 +41,7 @@ export default function DownloadGate({ reportName }: { reportName: string }) {
 
       setSent(true);
       trackEvent("Lead", { content_name: "download_gate" });
+      trackFormSubmit("download_gate");
       setTimeout(() => setOpen(false), 2000);
     } catch {
       setError("Network error. Please check your connection and try again.");

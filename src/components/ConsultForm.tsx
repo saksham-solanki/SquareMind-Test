@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getUTMParams } from "@/lib/utm";
 import { trackEvent } from "@/lib/meta-pixel";
+import { trackFormSubmit } from "@/lib/analytics";
 
 export default function ConsultForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -47,6 +48,7 @@ export default function ConsultForm() {
 
       setSubmitted(true);
       trackEvent("Lead", { content_name: "consult_form" });
+      trackFormSubmit("consultation");
     } catch {
       setError("Network error. Please check your connection and try again.");
     } finally {
