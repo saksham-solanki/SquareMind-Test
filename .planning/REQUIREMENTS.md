@@ -9,11 +9,11 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 ### Deployment & Infrastructure
 
-- [ ] **INFRA-01**: Site deploys to Vercel via GitHub (remove static export mode, GITHUB_PAGES conditional, basePath hack)
-- [ ] **INFRA-02**: squaremind.in domain points to Vercel with HTTPS
-- [ ] **INFRA-03**: Fix sitemap.xml to reference squaremind.in (currently wrong domain)
-- [ ] **INFRA-04**: Fix robots.txt to reference squaremind.in
-- [ ] **INFRA-05**: API routes work in production (no more static export limitations)
+- [x] **INFRA-01**: Site deploys to Vercel via GitHub (remove static export mode, GITHUB_PAGES conditional, basePath hack)
+- [x] **INFRA-02**: squaremind.in domain points to Vercel with HTTPS
+- [x] **INFRA-03**: Fix sitemap.xml to reference squaremind.in (currently wrong domain)
+- [x] **INFRA-04**: Fix robots.txt to reference squaremind.in
+- [x] **INFRA-05**: API routes work in production (no more static export limitations)
 
 ### Lead Capture & Forms
 
@@ -145,11 +145,11 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| INFRA-05 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
+| INFRA-03 | Phase 1 | Complete |
+| INFRA-04 | Phase 1 | Complete |
+| INFRA-05 | Phase 1 | Complete |
 | LEAD-01 | Phase 2 | Pending |
 | LEAD-02 | Phase 2 | Pending |
 | LEAD-03 | Phase 2 | Pending |
