@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeUp from "@/components/FadeUp";
 import NewsletterForm from "@/components/NewsletterForm";
+import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { getPostBySlug, getRelatedPosts, posts } from "@/lib/posts";
 
 interface Props {
@@ -71,6 +72,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
+      <ScrollProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
