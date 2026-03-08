@@ -3,6 +3,7 @@ import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
 import HeroForm from "@/components/HeroForm";
 import NewsletterForm from "@/components/NewsletterForm";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata: Metadata = {
   title: "SquareMind — India's Independent Real Estate Investment Advisory",
@@ -233,20 +234,11 @@ export default function HomePage() {
               Trusted by investors who<br />don&apos;t trust easily.
             </h2>
           </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {testimonials.map((t, i) => (
-              <FadeUp key={t.name} delay={i * 0.1}>
-                <div className="bg-cream rounded-[20px] p-10 max-lg:p-8 hover:-translate-y-1 transition-transform duration-400">
-                  <div className="text-gold text-[16px] mb-4 tracking-[3px]">{"\u2605\u2605\u2605\u2605\u2605"}</div>
-                  <p className="font-serif text-[18px] leading-[1.55] text-ink italic tracking-[-0.01em]">&ldquo;{t.text}&rdquo;</p>
-                  <div className="mt-6 pt-5 border-t border-cream-dark">
-                    <div className="text-[15px] font-semibold tracking-[-0.01em]">{t.name}</div>
-                    <div className="text-[13px] text-gray-400 mt-0.5">{t.role}</div>
-                  </div>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
+          <FadeUp delay={0.1}>
+            <div className="mt-12">
+              <TestimonialCarousel testimonials={testimonials} />
+            </div>
+          </FadeUp>
         </div>
       </section>
 
