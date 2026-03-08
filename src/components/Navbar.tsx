@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
@@ -24,6 +25,11 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Auto-close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -78,36 +84,58 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <div
-        className={cn(
-          "lg:hidden bg-chalk border-b border-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden transition-[max-height] duration-400",
-          mobileOpen ? "max-h-[420px]" : "max-h-0"
+      {/* Mobile menu — slide-in drawer */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* Backdrop overlay */}
+            <motion.div
+              className="lg:hidden fixed inset-0 z-40 bg-ink/30 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileOpen(false)}
+            />
+
+            {/* Slide-in drawer */}
+            <motion.div
+              className="lg:hidden fixed top-20 right-0 bottom-0 w-[85vw] max-w-[360px] z-50 bg-chalk shadow-[-8px_0_30px_rgba(0,0,0,0.1)]"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            >
+              <div className="flex flex-col h-full">
+                <div className="flex-1 overflow-y-auto">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "block px-8 py-5 text-[16px] border-b border-gray-200",
+                        pathname === link.href ? "text-ink font-medium" : "text-gray-500"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+                <div className="px-8 py-6">
+                  <Link
+                    href="/consultation"
+                    onClick={() => setMobileOpen(false)}
+                    className="block text-center bg-ink text-white text-[15px] font-semibold px-7 py-3 rounded-full hover:bg-sage transition-colors duration-300"
+                  >
+                    Book Free Call
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
-      >
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setMobileOpen(false)}
-            className={cn(
-              "block px-6 py-[18px] text-[16px] border-b border-gray-200",
-              pathname === link.href ? "text-ink font-medium" : "text-gray-500"
-            )}
-          >
-            {link.label}
-          </Link>
-        ))}
-        <div className="px-6 py-[18px]">
-          <Link
-            href="/consultation"
-            onClick={() => setMobileOpen(false)}
-            className="block text-center bg-ink text-white text-[15px] font-semibold px-7 py-3 rounded-full hover:bg-sage transition-colors duration-300"
-          >
-            Book Free Call
-          </Link>
-        </div>
-      </div>
+      </AnimatePresence>
     </header>
   );
 }
