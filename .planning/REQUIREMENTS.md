@@ -53,10 +53,10 @@ Requirements for the full revamp. Each maps to roadmap phases.
 ### UX & Design Polish
 
 - [ ] **UX-01**: Smooth page transitions between routes using Framer Motion layout animations (no hard page reloads feel)
-- [ ] **UX-02**: Interactive testimonial carousel/slider with autoplay, swipe gestures on mobile, and pause-on-hover
+- [x] **UX-02**: Interactive testimonial carousel/slider with autoplay, swipe gestures on mobile, and pause-on-hover
 - [ ] **UX-03**: Animated stats counters (count-up effect) on homepage metrics that trigger when section scrolls into view
-- [ ] **UX-04**: Improved mobile navigation with smooth slide-in drawer, backdrop blur, and close-on-route-change
-- [ ] **UX-05**: Micro-interactions on hover states (buttons scale/glow, cards lift with shadow, nav links highlight) and scroll-triggered fade/slide reveals
+- [x] **UX-04**: Improved mobile navigation with smooth slide-in drawer, backdrop blur, and close-on-route-change
+- [x] **UX-05**: Micro-interactions on hover states (buttons scale/glow, cards lift with shadow, nav links highlight) and scroll-triggered fade/slide reveals
 - [ ] **UX-06**: Loading states and skeleton screens on dynamic content (blog listing, tool results, form submissions)
 - [ ] **UX-07**: Scroll progress indicator bar on blog post pages showing read progress
 - [ ] **UX-08**: Animated social proof / trust signals (client count ticker, rotating partner logos, or live consultation counter)
@@ -174,10 +174,10 @@ Deferred to future release. Tracked but not in current roadmap.
 | LAND-04 | Phase 1 | Complete |
 | LAND-05 | Phase 1 | Complete |
 | UX-01 | Phase 3 | Pending |
-| UX-02 | Phase 3 | Pending |
+| UX-02 | Phase 3 | Complete |
 | UX-03 | Phase 3 | Pending |
-| UX-04 | Phase 3 | Pending |
-| UX-05 | Phase 3 | Pending |
+| UX-04 | Phase 3 | Complete |
+| UX-05 | Phase 3 | Complete |
 | UX-06 | Phase 3 | Pending |
 | UX-07 | Phase 3 | Pending |
 | UX-08 | Phase 3 | Pending |
