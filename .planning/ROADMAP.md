@@ -65,12 +65,12 @@ Plans:
   3. Testimonials section is an interactive carousel that auto-advances, supports swipe on mobile, and pauses on hover
   4. Mobile navigation slides in smoothly with backdrop blur and closes automatically on route change
   5. Buttons, cards, and interactive elements respond to hover/focus with visible micro-interactions (scale, glow, shadow lift)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
-- [ ] 03-03: TBD
+- [ ] 03-01-PLAN.md — Animation infrastructure (page transitions, MotionConfig, CountUp, ParallaxHero) + homepage animated stats
+- [ ] 03-02-PLAN.md — Testimonial carousel with autoplay/swipe + mobile nav slide-in drawer + hover micro-interactions
+- [ ] 03-03-PLAN.md — Scroll progress bar, skeleton screens, glassmorphism refinement, spacing/typography audit, visual verification
 
 ### Phase 4: Blog Engine
 **Goal**: Blog content lives in MDX files with frontmatter, renders with proper styling and SEO metadata, and the existing blog URLs continue to work without changes
