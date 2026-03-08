@@ -57,10 +57,10 @@ Requirements for the full revamp. Each maps to roadmap phases.
 - [x] **UX-03**: Animated stats counters (count-up effect) on homepage metrics that trigger when section scrolls into view
 - [x] **UX-04**: Improved mobile navigation with smooth slide-in drawer, backdrop blur, and close-on-route-change
 - [x] **UX-05**: Micro-interactions on hover states (buttons scale/glow, cards lift with shadow, nav links highlight) and scroll-triggered fade/slide reveals
-- [ ] **UX-06**: Loading states and skeleton screens on dynamic content (blog listing, tool results, form submissions)
-- [ ] **UX-07**: Scroll progress indicator bar on blog post pages showing read progress
+- [x] **UX-06**: Loading states and skeleton screens on dynamic content (blog listing, tool results, form submissions)
+- [x] **UX-07**: Scroll progress indicator bar on blog post pages showing read progress
 - [x] **UX-08**: Animated social proof / trust signals (client count ticker, rotating partner logos, or live consultation counter)
-- [ ] **UX-09**: Visual hierarchy and spacing refinements -- consistent section padding, improved typography scale, better whitespace rhythm across all pages
+- [x] **UX-09**: Visual hierarchy and spacing refinements -- consistent section padding, improved typography scale, better whitespace rhythm across all pages
 - [x] **UX-10**: Modern UI patterns -- glassmorphism/frosted-glass navbar on scroll, subtle parallax on hero sections, gradient mesh backgrounds on key sections
 
 ### Blog Engine
@@ -178,10 +178,10 @@ Deferred to future release. Tracked but not in current roadmap.
 | UX-03 | Phase 3 | Complete |
 | UX-04 | Phase 3 | Complete |
 | UX-05 | Phase 3 | Complete |
-| UX-06 | Phase 3 | Pending |
-| UX-07 | Phase 3 | Pending |
+| UX-06 | Phase 3 | Complete |
+| UX-07 | Phase 3 | Complete |
 | UX-08 | Phase 3 | Complete |
-| UX-09 | Phase 3 | Pending |
+| UX-09 | Phase 3 | Complete |
 | UX-10 | Phase 3 | Complete |
 | BLOG-01 | Phase 4 | Pending |
 | BLOG-02 | Phase 4 | Pending |
