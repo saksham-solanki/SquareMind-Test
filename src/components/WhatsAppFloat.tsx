@@ -1,9 +1,14 @@
 "use client";
 
+import { trackWhatsAppClick } from "@/lib/analytics";
+
 export default function WhatsAppFloat() {
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919876543210";
+
   return (
     <a
-      href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20strategy%20call"
+      href={`https://wa.me/${phoneNumber}?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20strategy%20call`}
+      onClick={() => trackWhatsAppClick()}
       className="fixed bottom-7 right-7 z-[90] w-[60px] h-[60px] bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_6px_24px_rgba(37,211,102,0.35)] hover:scale-110 hover:shadow-[0_8px_32px_rgba(37,211,102,0.45)] transition-all duration-300 max-[900px]:bottom-[76px]"
       target="_blank"
       rel="noopener"

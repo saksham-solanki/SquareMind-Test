@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
 import ConsultForm from "@/components/ConsultForm";
+import CalendlyButton from "@/components/CalendlyButton";
 
 export const metadata: Metadata = {
   title: "Free Real Estate Investment Strategy Call — SquareMind",
@@ -28,6 +29,8 @@ const donts = [
   "We don't follow up with spam calls if you're not interested.",
   "We don't give generic advice. Every call is specific to YOU.",
 ];
+
+const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/work-samsolanki/30min";
 
 export default function ConsultationPage() {
   return (
@@ -82,7 +85,13 @@ export default function ConsultationPage() {
             </FadeUp>
 
             <FadeUp delay={0.15}>
-              <ConsultForm />
+              <div className="flex flex-col gap-8">
+                <ConsultForm />
+                <div className="text-center">
+                  <p className="text-[14px] text-gray-400 mb-3">Or skip the form and book directly</p>
+                  <CalendlyButton url={calendlyUrl} text="Book Your Free Strategy Call" />
+                </div>
+              </div>
             </FadeUp>
           </div>
         </div>

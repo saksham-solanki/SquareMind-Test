@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { PopupButton, useCalendlyEventListener } from "react-calendly";
 import { trackEvent } from "@/lib/meta-pixel";
+import { trackCalendlyOpen } from "@/lib/analytics";
 
 export default function CalendlyButton({
   url,
@@ -20,6 +21,9 @@ export default function CalendlyButton({
   useCalendlyEventListener({
     onEventScheduled: () => {
       trackEvent("Schedule");
+    },
+    onProfilePageViewed: () => {
+      trackCalendlyOpen();
     },
   });
 
