@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -79,11 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${dmSans.variable} ${instrumentSerif.variable} font-sans antialiased`}>
-        <Navbar />
-        <main className="pt-20">{children}</main>
-        <Footer />
-        <WhatsAppFloat />
-        <StickyMobileCTA />
+        {children}
       </body>
     </html>
   );
