@@ -2,7 +2,7 @@
 
 ## Overview
 
-SquareMind's website revamp transforms a static GitHub Pages site into a live lead-generation engine on Vercel. The roadmap is sequenced around one hard constraint: Meta ads launch this week, so the deployment, landing page, form pipeline, and conversion tracking ship first. Everything else layers on top of that foundation -- site-wide forms and analytics, a scalable blog engine, interactive tools, and finally 300+ SEO articles at scale.
+SquareMind's website revamp transforms a static GitHub Pages site into a live lead-generation engine on Vercel. The roadmap is sequenced around one hard constraint: Meta ads launch this week, so the deployment, landing page, form pipeline, and conversion tracking ship first. Everything else layers on top of that foundation -- site-wide forms and analytics, UX polish to make the site feel dynamic and premium, a scalable blog engine, interactive tools, and finally 300+ SEO articles at scale.
 
 ## Phases
 
@@ -14,9 +14,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Ad Launch Pipeline** - Vercel deploy, Tri-City landing page, lead capture form, Meta Pixel, and Calendly -- everything needed to start running paid ads
 - [ ] **Phase 2: Site-Wide Forms & Analytics** - Wire up all remaining forms, booking CTAs, analytics, and notifications across the full site
-- [ ] **Phase 3: Blog Engine** - Replace hardcoded posts.ts with MDX-based content system that scales to 300+ posts
-- [ ] **Phase 4: Interactive Tools** - Fix existing calculators and build new investment tools for SEO and user engagement
-- [ ] **Phase 5: Content at Scale** - Generate 300+ SEO-optimized blog posts covering Indian real estate education
+- [ ] **Phase 3: UX & Design Polish** - Smooth transitions, micro-interactions, animated counters, mobile nav upgrade, and modern UI patterns to make the site feel premium and dynamic
+- [ ] **Phase 4: Blog Engine** - Replace hardcoded posts.ts with MDX-based content system that scales to 300+ posts
+- [ ] **Phase 5: Interactive Tools** - Fix existing calculators and build new investment tools for SEO and user engagement
+- [ ] **Phase 6: Content at Scale** - Generate 300+ SEO-optimized blog posts covering Indian real estate education
 
 ## Phase Details
 
@@ -54,7 +55,24 @@ Plans:
 - [ ] 02-02: TBD
 - [ ] 02-03: TBD
 
-### Phase 3: Blog Engine
+### Phase 3: UX & Design Polish
+**Goal**: The site feels dynamic, polished, and premium -- visitors experience smooth transitions, engaging animations, and modern UI patterns that build trust and keep them scrolling
+**Depends on**: Phase 2 (all core functionality must work before layering polish)
+**Requirements**: UX-01, UX-02, UX-03, UX-04, UX-05, UX-06, UX-07, UX-08, UX-09, UX-10
+**Success Criteria** (what must be TRUE):
+  1. Navigating between pages shows smooth animated transitions instead of hard page reloads
+  2. Homepage stats (consultations done, cities covered, etc.) animate with a count-up effect when the user scrolls them into view
+  3. Testimonials section is an interactive carousel that auto-advances, supports swipe on mobile, and pauses on hover
+  4. Mobile navigation slides in smoothly with backdrop blur and closes automatically on route change
+  5. Buttons, cards, and interactive elements respond to hover/focus with visible micro-interactions (scale, glow, shadow lift)
+**Plans**: TBD
+
+Plans:
+- [ ] 03-01: TBD
+- [ ] 03-02: TBD
+- [ ] 03-03: TBD
+
+### Phase 4: Blog Engine
 **Goal**: Blog content lives in MDX files with frontmatter, renders with proper styling and SEO metadata, and the existing blog URLs continue to work without changes
 **Depends on**: Phase 1 (needs Vercel for build pipeline)
 **Requirements**: BLOG-01, BLOG-02, BLOG-03, BLOG-04, BLOG-05, BLOG-06, BLOG-07, BLOG-08
@@ -66,11 +84,11 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
-- [ ] 03-03: TBD
+- [ ] 04-01: TBD
+- [ ] 04-02: TBD
+- [ ] 04-03: TBD
 
-### Phase 4: Interactive Tools
+### Phase 5: Interactive Tools
 **Goal**: Users can access a suite of real estate investment tools -- each with its own SEO-friendly URL -- that provide actionable calculations for Indian property buyers and NRIs
 **Depends on**: Phase 1 (needs Vercel deploy)
 **Requirements**: TOOL-01, TOOL-02, TOOL-03, TOOL-04, TOOL-05, TOOL-06, TOOL-07, TOOL-08, TOOL-09, TOOL-10
@@ -82,13 +100,13 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
-- [ ] 04-03: TBD
+- [ ] 05-01: TBD
+- [ ] 05-02: TBD
+- [ ] 05-03: TBD
 
-### Phase 5: Content at Scale
+### Phase 6: Content at Scale
 **Goal**: The blog has 300+ SEO-optimized posts covering all major Indian real estate topics, cities, and buyer segments, with internal linking to tools and frameworks
-**Depends on**: Phase 3 (needs blog engine for MDX publishing)
+**Depends on**: Phase 4 (needs blog engine for MDX publishing)
 **Requirements**: CONT-01, CONT-02, CONT-03, CONT-04, CONT-05
 **Success Criteria** (what must be TRUE):
   1. Blog has 300+ published posts across all categories (Investment Strategy, City Guides, NRI Corner, Tax & Legal, Builder Analysis, Market Data, Due Diligence, First-Time Buyers)
@@ -97,19 +115,20 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
-- [ ] 05-03: TBD
+- [ ] 06-01: TBD
+- [ ] 06-02: TBD
+- [ ] 06-03: TBD
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Ad Launch Pipeline | 0/3 | Not started | - |
 | 2. Site-Wide Forms & Analytics | 0/3 | Not started | - |
-| 3. Blog Engine | 0/3 | Not started | - |
-| 4. Interactive Tools | 0/3 | Not started | - |
-| 5. Content at Scale | 0/3 | Not started | - |
+| 3. UX & Design Polish | 0/3 | Not started | - |
+| 4. Blog Engine | 0/3 | Not started | - |
+| 5. Interactive Tools | 0/3 | Not started | - |
+| 6. Content at Scale | 0/3 | Not started | - |

@@ -50,6 +50,19 @@ Requirements for the full revamp. Each maps to roadmap phases.
 - [ ] **LAND-04**: Landing page has Calendly booking CTA
 - [ ] **LAND-05**: Landing page is optimized for mobile (70%+ traffic from Meta ads is mobile)
 
+### UX & Design Polish
+
+- [ ] **UX-01**: Smooth page transitions between routes using Framer Motion layout animations (no hard page reloads feel)
+- [ ] **UX-02**: Interactive testimonial carousel/slider with autoplay, swipe gestures on mobile, and pause-on-hover
+- [ ] **UX-03**: Animated stats counters (count-up effect) on homepage metrics that trigger when section scrolls into view
+- [ ] **UX-04**: Improved mobile navigation with smooth slide-in drawer, backdrop blur, and close-on-route-change
+- [ ] **UX-05**: Micro-interactions on hover states (buttons scale/glow, cards lift with shadow, nav links highlight) and scroll-triggered fade/slide reveals
+- [ ] **UX-06**: Loading states and skeleton screens on dynamic content (blog listing, tool results, form submissions)
+- [ ] **UX-07**: Scroll progress indicator bar on blog post pages showing read progress
+- [ ] **UX-08**: Animated social proof / trust signals (client count ticker, rotating partner logos, or live consultation counter)
+- [ ] **UX-09**: Visual hierarchy and spacing refinements -- consistent section padding, improved typography scale, better whitespace rhythm across all pages
+- [ ] **UX-10**: Modern UI patterns -- glassmorphism/frosted-glass navbar on scroll, subtle parallax on hero sections, gradient mesh backgrounds on key sections
+
 ### Blog Engine
 
 - [ ] **BLOG-01**: Replace hardcoded posts.ts with MDX-based content system (Velite or @next/mdx)
@@ -160,37 +173,47 @@ Deferred to future release. Tracked but not in current roadmap.
 | LAND-03 | Phase 1 | Pending |
 | LAND-04 | Phase 1 | Pending |
 | LAND-05 | Phase 1 | Pending |
-| BLOG-01 | Phase 3 | Pending |
-| BLOG-02 | Phase 3 | Pending |
-| BLOG-03 | Phase 3 | Pending |
-| BLOG-04 | Phase 3 | Pending |
-| BLOG-05 | Phase 3 | Pending |
-| BLOG-06 | Phase 3 | Pending |
-| BLOG-07 | Phase 3 | Pending |
-| BLOG-08 | Phase 3 | Pending |
+| UX-01 | Phase 3 | Pending |
+| UX-02 | Phase 3 | Pending |
+| UX-03 | Phase 3 | Pending |
+| UX-04 | Phase 3 | Pending |
+| UX-05 | Phase 3 | Pending |
+| UX-06 | Phase 3 | Pending |
+| UX-07 | Phase 3 | Pending |
+| UX-08 | Phase 3 | Pending |
+| UX-09 | Phase 3 | Pending |
+| UX-10 | Phase 3 | Pending |
+| BLOG-01 | Phase 4 | Pending |
+| BLOG-02 | Phase 4 | Pending |
+| BLOG-03 | Phase 4 | Pending |
+| BLOG-04 | Phase 4 | Pending |
+| BLOG-05 | Phase 4 | Pending |
+| BLOG-06 | Phase 4 | Pending |
+| BLOG-07 | Phase 4 | Pending |
+| BLOG-08 | Phase 4 | Pending |
 | NEWS-01 | Phase 2 | Pending |
 | NEWS-02 | Phase 2 | Pending |
-| TOOL-01 | Phase 4 | Pending |
-| TOOL-02 | Phase 4 | Pending |
-| TOOL-03 | Phase 4 | Pending |
-| TOOL-04 | Phase 4 | Pending |
-| TOOL-05 | Phase 4 | Pending |
-| TOOL-06 | Phase 4 | Pending |
-| TOOL-07 | Phase 4 | Pending |
-| TOOL-08 | Phase 4 | Pending |
-| TOOL-09 | Phase 4 | Pending |
-| TOOL-10 | Phase 4 | Pending |
-| CONT-01 | Phase 5 | Pending |
-| CONT-02 | Phase 5 | Pending |
-| CONT-03 | Phase 5 | Pending |
-| CONT-04 | Phase 5 | Pending |
-| CONT-05 | Phase 5 | Pending |
+| TOOL-01 | Phase 5 | Pending |
+| TOOL-02 | Phase 5 | Pending |
+| TOOL-03 | Phase 5 | Pending |
+| TOOL-04 | Phase 5 | Pending |
+| TOOL-05 | Phase 5 | Pending |
+| TOOL-06 | Phase 5 | Pending |
+| TOOL-07 | Phase 5 | Pending |
+| TOOL-08 | Phase 5 | Pending |
+| TOOL-09 | Phase 5 | Pending |
+| TOOL-10 | Phase 5 | Pending |
+| CONT-01 | Phase 6 | Pending |
+| CONT-02 | Phase 6 | Pending |
+| CONT-03 | Phase 6 | Pending |
+| CONT-04 | Phase 6 | Pending |
+| CONT-05 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 53 total
-- Mapped to phases: 53
+- v1 requirements: 63 total
+- Mapped to phases: 63
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 after roadmap creation*
+*Last updated: 2026-03-08 after roadmap revision (added UX requirements, renumbered phases)*
