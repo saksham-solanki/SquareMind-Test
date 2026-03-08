@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import MetaPixel from "@/components/MetaPixel";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -75,7 +77,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`${dmSans.variable} ${instrumentSerif.variable} font-sans antialiased`}>
+        <MetaPixel pixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID} />
         {children}
+        {process.env.NEXT_PUBLIC_GA4_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4_ID} />
+        )}
       </body>
     </html>
   );
