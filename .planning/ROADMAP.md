@@ -48,12 +48,12 @@ Plans:
   3. "Book a Call" buttons across the site open Calendly popup; Calendly booking fires a Meta Pixel Schedule event
   4. GA4 tracks pageviews site-wide plus custom events (form_submit, calendly_open, whatsapp_click)
   5. Hotjar is recording sessions on homepage, consultation page, and landing page
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md — Wire HeroForm, ConsultForm, DownloadGate to /api/leads + Resend email notifications
+- [ ] 02-02-PLAN.md — GA4 custom events, Hotjar, CalendlyButton on consultation page, WhatsApp env var
+- [ ] 02-03-PLAN.md — NewsletterForm component replacing dead inline forms on homepage and blog posts
 
 ### Phase 3: UX & Design Polish
 **Goal**: The site feels dynamic, polished, and premium -- visitors experience smooth transitions, engaging animations, and modern UI patterns that build trust and keep them scrolling
