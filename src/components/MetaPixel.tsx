@@ -2,12 +2,7 @@
 
 import Script from "next/script";
 
-declare global {
-  interface Window {
-    fbq: (...args: unknown[]) => void;
-    _fbq: (...args: unknown[]) => void;
-  }
-}
+// fbq type declared in src/lib/meta-pixel.ts
 
 export default function MetaPixel({ pixelId }: { pixelId?: string }) {
   if (!pixelId) return null;
