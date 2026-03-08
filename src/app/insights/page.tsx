@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
 import FilterPills from "@/components/FilterPills";
+import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Real Estate Investment Insights & Analysis — SquareMind Blog",
@@ -11,19 +12,10 @@ export const metadata: Metadata = {
     description: "Data-driven real estate investment analysis and market intelligence.",
     url: "/insights",
   },
+  alternates: {
+    canonical: "https://squaremind.in/insights",
+  },
 };
-
-const articles = [
-  { tag: "Dark Truth", title: "We Checked 50 Builders' Delivery Timelines. Only 12 Delivered On Time.", meta: "8 min \u2022 12.4K views", category: "Dark Truths" },
-  { tag: "Investment Strategy", title: "Real Estate vs Nifty vs Gold vs FD: 10-Year Returns With Actual Data", meta: "12 min \u2022 8.2K views", category: "Investment Strategy" },
-  { tag: "NRI Corner", title: "Complete Guide to Buying Property in India as an NRI (2026)", meta: "15 min \u2022 6.8K views", category: "NRI Corner" },
-  { tag: "Dark Truth", title: "The Carpet Area Scam: How 1200 Sq Ft Becomes 850 Sq Ft", meta: "6 min \u2022 9.1K views", category: "Dark Truths" },
-  { tag: "City Guide", title: "Bangalore Real Estate: Sector-by-Sector Investment Analysis", meta: "14 min \u2022 5.4K views", category: "City Guides" },
-  { tag: "Tax & Legal", title: "Capital Gains Tax on Property in India: The Complete Guide", meta: "10 min \u2022 7.3K views", category: "Tax & Legal" },
-  { tag: "Builder Analysis", title: "Godrej Properties: RERA Track Record, Financials, and Investor Verdict", meta: "11 min \u2022 4.8K views", category: "Builder Analysis" },
-  { tag: "Investment Strategy", title: "Pre-Launch vs Ready-to-Move: The Math Most Investors Get Wrong", meta: "9 min \u2022 6.1K views", category: "Investment Strategy" },
-  { tag: "Market Data", title: "India Real Estate Market Cycle: Where Are We in 2026?", meta: "13 min \u2022 5.9K views", category: "Market Data" },
-];
 
 const categories = ["All", "Investment Strategy", "Dark Truths", "NRI Corner", "City Guides", "Tax & Legal", "Builder Analysis", "Market Data"];
 
@@ -54,13 +46,16 @@ export default function InsightsPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {articles.map((a, i) => (
-              <FadeUp key={a.title} delay={i * 0.05}>
-                <div className="bg-cream rounded-[20px] p-9 max-lg:p-7 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-400 cursor-pointer">
-                  <div className="text-[12px] font-semibold text-sage tracking-[0.06em] uppercase mb-3">{a.tag}</div>
-                  <div className="font-serif text-[21px] leading-[1.3] text-ink tracking-[-0.02em]">{a.title}</div>
-                  <div className="text-[13px] text-gray-400 mt-4">{a.meta}</div>
-                </div>
+            {posts.map((post, i) => (
+              <FadeUp key={post.slug} delay={i * 0.05}>
+                <Link href={`/insights/${post.slug}`} className="block h-full">
+                  <div className="bg-cream rounded-[20px] p-9 max-lg:p-7 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-400 cursor-pointer h-full">
+                    <div className="text-[12px] font-semibold text-sage tracking-[0.06em] uppercase mb-3">{post.tag}</div>
+                    <div className="font-serif text-[21px] leading-[1.3] text-ink tracking-[-0.02em]">{post.title}</div>
+                    <div className="text-[14px] text-gray-500 mt-3 leading-[1.6]">{post.description.slice(0, 100)}…</div>
+                    <div className="text-[13px] text-gray-400 mt-4">{post.readTime} read • {post.views} views</div>
+                  </div>
+                </Link>
               </FadeUp>
             ))}
           </div>
