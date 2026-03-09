@@ -6,6 +6,60 @@ import NewsletterForm from "@/components/NewsletterForm";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/mdx";
 
+/**
+ * Extract FAQ Q&A pairs from raw MDX content.
+ * Looks for ## FAQ or ## Frequently Asked Questions, then parses ### headings as questions.
+ */
+function extractFAQs(content: string): Array<{ question: string; answer: string }> {
+  // Find the FAQ section start
+  const faqHeaderMatch = content.match(/^## (?:FAQ|Frequently Asked Questions)\s*$/m);
+  if (!faqHeaderMatch || faqHeaderMatch.index === undefined) return [];
+
+  const faqStart = faqHeaderMatch.index + faqHeaderMatch[0].length;
+
+  // Find the end of the FAQ section (next ## heading or end of content)
+  const nextH2Match = content.slice(faqStart).match(/^## /m);
+  const faqSection = nextH2Match && nextH2Match.index !== undefined
+    ? content.slice(faqStart, faqStart + nextH2Match.index)
+    : content.slice(faqStart);
+
+  // Extract ### question / answer pairs
+  const h3Regex = /^### (.+)$/gm;
+  const questions: Array<{ question: string; startIndex: number }> = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = h3Regex.exec(faqSection)) !== null) {
+    questions.push({ question: match[1].trim(), startIndex: match.index + match[0].length });
+  }
+
+  if (questions.length === 0) return [];
+
+  const faqs: Array<{ question: string; answer: string }> = [];
+
+  for (let i = 0; i < questions.length && i < 25; i++) {
+    const start = questions[i].startIndex;
+    const end = i + 1 < questions.length ? questions[i + 1].startIndex - questions[i + 1].question.length - 4 : faqSection.length;
+    let answer = faqSection.slice(start, end).trim();
+
+    // Strip markdown formatting for schema text
+    answer = answer
+      .replace(/\*\*(.+?)\*\*/g, "$1")       // bold
+      .replace(/\*(.+?)\*/g, "$1")            // italic
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // links
+      .replace(/^[-*] /gm, "")                // list markers
+      .replace(/^#{1,6} .+$/gm, "")           // headings inside answer
+      .replace(/\n{2,}/g, " ")                 // collapse newlines
+      .replace(/\n/g, " ")
+      .trim();
+
+    if (answer) {
+      faqs.push({ question: questions[i].question, answer });
+    }
+  }
+
+  return faqs;
+}
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -75,6 +129,23 @@ export default async function PostPage({ params }: Props) {
     articleSection: post.meta.category,
   };
 
+  // Extract FAQs and build FAQPage schema if present
+  const faqs = extractFAQs(post.content);
+  const faqSchema = faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <ScrollProgress />
@@ -82,6 +153,12 @@ export default async function PostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Breadcrumb */}
       <div className="mx-auto max-w-[1200px] px-6 lg:px-14 pt-5">
