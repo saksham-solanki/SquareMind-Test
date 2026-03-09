@@ -81,12 +81,11 @@ Plans:
   2. Individual blog post pages render MDX content with prose styling, related posts, and correct SEO metadata (OpenGraph, Twitter, JSON-LD Article)
   3. All existing blog post URLs from posts.ts still work and display their migrated content
   4. Sitemap.xml auto-generates entries for all MDX blog posts with squaremind.in domain
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
-- [ ] 04-03: TBD
+- [ ] 04-01-PLAN.md — MDX infrastructure (@next/mdx, gray-matter, remark-gfm) + migrate all 10 posts from posts.ts to MDX files + mdx.ts utility
+- [ ] 04-02-PLAN.md — Rewire blog listing with working category filters, MDX post rendering, SEO metadata, sitemap integration, delete posts.ts
 
 ### Phase 5: Interactive Tools
 **Goal**: Users can access a suite of real estate investment tools -- each with its own SEO-friendly URL -- that provide actionable calculations for Indian property buyers and NRIs
@@ -129,6 +128,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 1. Ad Launch Pipeline | 3/3 | Complete | 2026-03-08 |
 | 2. Site-Wide Forms & Analytics | 3/3 | Complete   | 2026-03-08 |
 | 3. UX & Design Polish | 3/3 | Complete   | 2026-03-08 |
-| 4. Blog Engine | 0/3 | Not started | - |
+| 4. Blog Engine | 0/2 | Not started | - |
 | 5. Interactive Tools | 0/3 | Not started | - |
 | 6. Content at Scale | 0/3 | Not started | - |
