@@ -65,13 +65,13 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 ### Blog Engine
 
-- [ ] **BLOG-01**: Replace hardcoded posts.ts with MDX-based content system (Velite or @next/mdx)
-- [ ] **BLOG-02**: Blog posts have frontmatter: title, slug, description, category, tags, publishedAt, readTime, keywords
+- [x] **BLOG-01**: Replace hardcoded posts.ts with MDX-based content system (Velite or @next/mdx)
+- [x] **BLOG-02**: Blog posts have frontmatter: title, slug, description, category, tags, publishedAt, readTime, keywords
 - [ ] **BLOG-03**: Blog listing page with category filters works with new engine
 - [ ] **BLOG-04**: Individual blog post pages render MDX with proper styling (prose-squaremind)
 - [ ] **BLOG-05**: Related posts feature works with new engine
 - [ ] **BLOG-06**: Blog post SEO metadata (OpenGraph, Twitter, JSON-LD Article schema) works with new engine
-- [ ] **BLOG-07**: Existing blog content migrated from posts.ts to MDX files without URL changes
+- [x] **BLOG-07**: Existing blog content migrated from posts.ts to MDX files without URL changes
 - [ ] **BLOG-08**: Sitemap auto-generates from MDX content
 
 ### Newsletter
@@ -183,13 +183,13 @@ Deferred to future release. Tracked but not in current roadmap.
 | UX-08 | Phase 3 | Complete |
 | UX-09 | Phase 3 | Complete |
 | UX-10 | Phase 3 | Complete |
-| BLOG-01 | Phase 4 | Pending |
-| BLOG-02 | Phase 4 | Pending |
+| BLOG-01 | Phase 4 | Complete |
+| BLOG-02 | Phase 4 | Complete |
 | BLOG-03 | Phase 4 | Pending |
 | BLOG-04 | Phase 4 | Pending |
 | BLOG-05 | Phase 4 | Pending |
 | BLOG-06 | Phase 4 | Pending |
-| BLOG-07 | Phase 4 | Pending |
+| BLOG-07 | Phase 4 | Complete |
 | BLOG-08 | Phase 4 | Pending |
 | NEWS-01 | Phase 2 | Complete |
 | NEWS-02 | Phase 2 | Complete |

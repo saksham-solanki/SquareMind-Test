@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-03-08T20:17:45.991Z"
-last_activity: 2026-03-09 -- Completed 03-03 (Scroll Progress, Skeleton, Glassmorphism & Polish)
+status: in-progress
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-03-09T04:49:18Z"
+last_activity: 2026-03-09 -- Completed 04-01 (MDX Content Infrastructure & Post Migration)
 progress:
   total_phases: 6
   completed_phases: 3
-  total_plans: 9
-  completed_plans: 9
-  percent: 100
+  total_plans: 11
+  completed_plans: 10
+  percent: 91
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Visitors trust SquareMind enough to book a free strategy call within 5 minutes of landing on the site.
-**Current focus:** Phase 3 Complete - Ready for Phase 4
+**Current focus:** Phase 4 - Blog Engine (MDX migration)
 
 ## Current Position
 
-Phase: 3 of 6 (UX & Design Polish) -- COMPLETE
-Plan: 3 of 3 in current phase
-Status: Phase 3 Complete
-Last activity: 2026-03-09 -- Completed 03-03 (Scroll Progress, Skeleton, Glassmorphism & Polish)
+Phase: 4 of 6 (Blog Engine)
+Plan: 1 of 1 in current phase (04-01 complete)
+Status: Phase 4 In Progress
+Last activity: 2026-03-09 -- Completed 04-01 (MDX Content Infrastructure & Post Migration)
 
-Progress: [██████████] 100% (Overall)
+Progress: [█████████░] 91% (Overall)
 
 ## Performance Metrics
 
@@ -59,6 +59,7 @@ Progress: [██████████] 100% (Overall)
 | Phase 03 P01 | 3min | 2 tasks | 6 files |
 | Phase 03 P02 | 3min | 2 tasks | 3 files |
 | Phase 03 P03 | 2min | 3 tasks | 7 files |
+| Phase 04 P01 | 2min | 2 tasks | 18 files |
 
 ## Accumulated Context
 
@@ -88,6 +89,9 @@ Recent decisions affecting current work:
 - [Phase 03]: 4.9 star and Zero stats rendered statically since they don't count up well
 - [Phase 03]: (main) layout made client component for MotionConfig -- no metadata export needed there
 - [Phase 03]: Navbar transparency increased from 85% to 60% for stronger glass effect
+- [Phase 04]: Used @next/mdx with remark-gfm string reference for Turbopack compatibility (not Velite)
+- [Phase 04]: Post metadata nested under meta field (post.meta.title); blog pages updated in Plan 02
+- [Phase 04]: Kept posts.ts intact during migration; Plan 02 switches imports then removes it
 
 ### Pending Todos
 
@@ -101,6 +105,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-08T20:14:36.795Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-03-09T04:49:18Z
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
