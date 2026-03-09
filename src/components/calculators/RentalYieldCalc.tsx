@@ -1,40 +1,54 @@
 "use client";
 
 import { useState } from "react";
+import CalcField from "@/components/calculators/shared/CalcField";
+import ResultRow from "@/components/calculators/shared/ResultRow";
+import VerdictBox from "@/components/calculators/shared/VerdictBox";
+import { CITY_BENCHMARKS } from "@/data/city-benchmarks";
 
 function fmt(n: number) {
   return "\u20B9" + Math.round(n).toLocaleString("en-IN");
 }
+
+const TAX_OPTIONS = [
+  { value: "0", label: "0% (No tax)" },
+  { value: "5", label: "5% (Old regime)" },
+  { value: "20", label: "20% (Old regime)" },
+  { value: "30", label: "30% (Highest slab)" },
+];
 
 export default function RentalYieldCalc() {
   const [price, setPrice] = useState(10000000);
   const [rent, setRent] = useState(25000);
   const [maintenance, setMaintenance] = useState(36000);
   const [vacancy, setVacancy] = useState(1);
+  const [taxRate, setTaxRate] = useState("30");
   const [calculated, setCalculated] = useState(false);
 
+  const taxPct = Number(taxRate) / 100;
   const annualGross = rent * 12;
   const vacancyLoss = rent * vacancy;
   const netBeforeTax = annualGross - maintenance - vacancyLoss;
-  const tax = netBeforeTax * 0.3;
+  const tax = netBeforeTax * taxPct;
   const netIncome = netBeforeTax - tax;
   const grossYield = price > 0 ? (annualGross / price) * 100 : 0;
   const netYield = price > 0 ? (netIncome / price) * 100 : 0;
 
-  let verdictClass = "bg-cream text-gray-600";
-  let verdictText = "Enter your numbers and calculate to see the verdict.";
-  if (calculated) {
-    if (netYield >= 3) {
-      verdictClass = "bg-sage-light text-sage-deep";
-      verdictText = `Verdict: Strong yield at ${netYield.toFixed(1)}% net. This is above the national average of 2-3%. Worth considering as a rental investment.`;
-    } else if (netYield >= 2) {
-      verdictClass = "bg-cream text-gray-600";
-      verdictText = `Verdict: Average yield at ${netYield.toFixed(1)}% net. Most Indian properties fall in this range. Capital appreciation will need to do the heavy lifting.`;
-    } else {
-      verdictClass = "bg-[#FFF3E0] text-[#E65100]";
-      verdictText = `Verdict: Weak yield at ${netYield.toFixed(1)}% net. You would earn more in a fixed deposit. Only invest here if you expect significant appreciation.`;
-    }
-  }
+  const verdictVariant = calculated
+    ? netYield >= 3
+      ? "positive"
+      : netYield >= 2
+        ? "neutral"
+        : "warning"
+    : "neutral";
+
+  const verdictText = calculated
+    ? netYield >= 3
+      ? `Verdict: Strong yield at ${netYield.toFixed(1)}% net. This is above the national average of 2-3%. Worth considering as a rental investment.`
+      : netYield >= 2
+        ? `Verdict: Average yield at ${netYield.toFixed(1)}% net. Most Indian properties fall in this range. Capital appreciation will need to do the heavy lifting.`
+        : `Verdict: Weak yield at ${netYield.toFixed(1)}% net. You would earn more in a fixed deposit. Only invest here if you expect significant appreciation.`
+    : "Enter your numbers and calculate to see the verdict.";
 
   return (
     <div className="bg-cream rounded-[28px] p-12 max-lg:p-6 mt-8" id="rental-yield">
@@ -42,10 +56,17 @@ export default function RentalYieldCalc() {
       <p className="text-[15px] text-gray-500 mb-8 tracking-[-0.01em]">Calculate the REAL rental yield &mdash; not the inflated number brokers quote.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div className="flex flex-col gap-4">
-          <CalcField label="Property Purchase Price (\u20B9)" value={price} onChange={setPrice} />
-          <CalcField label="Monthly Rent Expected (\u20B9)" value={rent} onChange={setRent} />
-          <CalcField label="Annual Maintenance (\u20B9)" value={maintenance} onChange={setMaintenance} hint="Society charges, repairs, property tax" />
-          <CalcField label="Vacancy (months/year)" value={vacancy} onChange={setVacancy} min={0} max={12} hint="Average 1-2 months between tenants" />
+          <CalcField label="Property Purchase Price (₹)" value={price} onChange={(v) => setPrice(+v)} />
+          <CalcField label="Monthly Rent Expected (₹)" value={rent} onChange={(v) => setRent(+v)} />
+          <CalcField label="Annual Maintenance (₹)" value={maintenance} onChange={(v) => setMaintenance(+v)} hint="Society charges, repairs, property tax" />
+          <CalcField label="Vacancy (months/year)" value={vacancy} onChange={(v) => setVacancy(+v)} min={0} max={12} hint="Average 1-2 months between tenants" />
+          <CalcField
+            label="Tax Bracket"
+            value={taxRate}
+            onChange={(v) => setTaxRate(String(v))}
+            type="select"
+            options={TAX_OPTIONS}
+          />
           <button onClick={() => setCalculated(true)} className="w-full bg-ink text-white py-4 rounded-full text-[16px] font-semibold hover:bg-gray-600 hover:scale-[1.02] transition-all duration-300 mt-2 tracking-[-0.01em]">
             Calculate rental yield
           </button>
@@ -58,45 +79,33 @@ export default function RentalYieldCalc() {
             <div className="text-[13px] font-semibold text-gray-400 uppercase tracking-[0.06em] mb-2">Net Rental Yield</div>
             <div className="font-serif text-[36px] tracking-[-0.03em] text-ink leading-[1.1]">{netYield.toFixed(2)}%</div>
             <div className="mt-4 space-y-2">
-              <Row label="Annual Gross Rent" value={fmt(annualGross)} />
-              <Row label="Less: Maintenance" value={fmt(maintenance)} />
-              <Row label="Less: Vacancy Loss" value={fmt(vacancyLoss)} />
-              <Row label="Less: Tax (30%)" value={fmt(tax)} />
-              <div className="flex justify-between pt-3 mt-2 border-t-[1.5px] border-gray-300 font-bold text-[15px] text-ink">
-                <span>Net Annual Income</span>
-                <span className="text-sage">{fmt(netIncome)}</span>
-              </div>
+              <ResultRow label="Annual Gross Rent" value={fmt(annualGross)} />
+              <ResultRow label="Less: Maintenance" value={fmt(maintenance)} />
+              <ResultRow label="Less: Vacancy Loss" value={fmt(vacancyLoss)} />
+              <ResultRow label={`Less: Tax (${taxRate}%)`} value={fmt(tax)} />
+              <ResultRow label="Net Annual Income" value={fmt(netIncome)} highlight />
             </div>
           </div>
-          <div className={`mt-5 p-4 rounded-[12px] text-[14px] leading-relaxed tracking-[-0.01em] ${verdictClass}`}>{verdictText}</div>
+          <VerdictBox variant={verdictVariant}>{verdictText}</VerdictBox>
+
+          {/* City Benchmark Comparison */}
+          <div className="mt-6 pt-6 border-t border-gray-200">
+            <div className="text-[13px] font-semibold text-gray-400 uppercase tracking-[0.06em] mb-3">City Benchmark Comparison</div>
+            <div className="space-y-2">
+              {CITY_BENCHMARKS.map((b) => (
+                <div key={b.city} className="flex justify-between items-center py-1.5 text-[13px]">
+                  <span className="text-gray-600">{b.city}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-ink">{b.avgGrossYield}%</span>
+                    <span className="text-gray-400 text-[12px]">({b.yieldRange[0]}-{b.yieldRange[1]}%)</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="text-[12px] text-gray-400 mt-2">Average gross yields. Your net yield will vary based on expenses and tax bracket.</div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function CalcField({ label, value, onChange, hint, min, max }: { label: string; value: number; onChange: (v: number) => void; hint?: string; min?: number; max?: number }) {
-  return (
-    <div>
-      <label className="block text-[13px] font-semibold text-gray-600 mb-1.5 tracking-[-0.01em]">{label}</label>
-      <input
-        type="number"
-        value={value}
-        onChange={(e) => onChange(+e.target.value)}
-        min={min}
-        max={max}
-        className="w-full px-[18px] py-3.5 border-[1.5px] border-gray-300 rounded-[12px] text-[15px] bg-white text-ink focus:outline-none focus:border-ink focus:shadow-[0_0_0_3px_rgba(13,13,13,0.06)] transition-all tracking-[-0.01em]"
-      />
-      {hint && <div className="text-[12px] text-gray-400 mt-1">{hint}</div>}
-    </div>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex justify-between py-2 text-[14px] text-gray-500 tracking-[-0.01em]">
-      <span>{label}</span>
-      <span className="font-semibold text-ink">{value}</span>
     </div>
   );
 }

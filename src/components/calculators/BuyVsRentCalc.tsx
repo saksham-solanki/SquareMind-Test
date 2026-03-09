@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import CalcField from "@/components/calculators/shared/CalcField";
+import ResultRow from "@/components/calculators/shared/ResultRow";
+import VerdictBox from "@/components/calculators/shared/VerdictBox";
 
 function fmt(n: number) {
   return "\u20B9" + Math.round(n).toLocaleString("en-IN");
@@ -13,6 +17,8 @@ export default function BuyVsRentCalc() {
   const [rate, setRate] = useState(8.5);
   const [appreciation, setAppreciation] = useState(5);
   const [years, setYears] = useState(10);
+  const [rentInflation, setRentInflation] = useState(5);
+  const [equityReturn, setEquityReturn] = useState(12);
   const [calculated, setCalculated] = useState(false);
 
   const downAmt = price * (downPct / 100);
@@ -27,9 +33,9 @@ export default function BuyVsRentCalc() {
   const netBuyCost = totalBuyCost - futureVal;
 
   let totalRent = 0;
-  for (let y = 0; y < years; y++) totalRent += rent * 12 * Math.pow(1.05, y);
+  for (let y = 0; y < years; y++) totalRent += rent * 12 * Math.pow(1 + rentInflation / 100, y);
   const investedAmt = downAmt + regCost;
-  const investedValue = investedAmt * Math.pow(1.12, years);
+  const investedValue = investedAmt * Math.pow(1 + equityReturn / 100, years);
   const investGain = investedValue - investedAmt;
   const netRentCost = totalRent - investGain;
 
@@ -42,12 +48,14 @@ export default function BuyVsRentCalc() {
       <p className="text-[15px] text-gray-500 mb-8 tracking-[-0.01em]">The honest math behind &quot;should I buy or rent?&quot;</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div className="flex flex-col gap-4">
-          <Field label="Property Price (\u20B9)" value={price} onChange={setPrice} />
-          <Field label="Current Monthly Rent (\u20B9)" value={rent} onChange={setRent} />
-          <Field label="Down Payment %" value={downPct} onChange={setDownPct} />
-          <Field label="Home Loan Interest Rate %" value={rate} onChange={setRate} step={0.1} />
-          <Field label="Expected Annual Appreciation %" value={appreciation} onChange={setAppreciation} step={0.5} />
-          <Field label="Investment Horizon (years)" value={years} onChange={setYears} min={1} max={30} />
+          <CalcField label="Property Price (₹)" value={price} onChange={(v) => setPrice(+v)} />
+          <CalcField label="Current Monthly Rent (₹)" value={rent} onChange={(v) => setRent(+v)} />
+          <CalcField label="Down Payment %" value={downPct} onChange={(v) => setDownPct(+v)} />
+          <CalcField label="Home Loan Interest Rate %" value={rate} onChange={(v) => setRate(+v)} step={0.1} />
+          <CalcField label="Expected Annual Appreciation %" value={appreciation} onChange={(v) => setAppreciation(+v)} step={0.5} />
+          <CalcField label="Rent Inflation (% per year)" value={rentInflation} onChange={(v) => setRentInflation(+v)} step={0.5} hint="Annual increase in rent" />
+          <CalcField label="Equity Return (% CAGR)" value={equityReturn} onChange={(v) => setEquityReturn(+v)} step={0.5} hint="Expected return if you invest instead" />
+          <CalcField label="Investment Horizon (years)" value={years} onChange={(v) => setYears(+v)} min={1} max={30} />
           <button onClick={() => setCalculated(true)} className="w-full bg-ink text-white py-4 rounded-full text-[16px] font-semibold hover:bg-gray-600 hover:scale-[1.02] transition-all duration-300 mt-2 tracking-[-0.01em]">
             Analyze buy vs rent
           </button>
@@ -60,47 +68,33 @@ export default function BuyVsRentCalc() {
           {calculated && <div className="text-[14px] text-gray-500 mt-2">by {fmt(diff)} over {years} years</div>}
           <div className="mt-6 pt-6 border-t border-gray-200">
             <div className="text-[13px] font-semibold text-gray-400 uppercase tracking-[0.06em] mb-2">Cost Comparison ({years} years)</div>
-            <Row label="Total Cost of Buying" value={fmt(totalBuyCost)} />
-            <Row label="\u2014 EMI Payments" value={fmt(totalEmi)} />
-            <Row label="\u2014 Down Payment" value={fmt(downAmt)} />
-            <Row label="\u2014 Registration & Stamp" value={fmt(regCost)} />
-            <Row label="Less: Property Value" value={fmt(futureVal)} />
-            <div className="flex justify-between pt-3 mt-2 border-t-[1.5px] border-gray-300 font-bold text-[15px] text-ink">
-              <span>Net Cost of Buying</span><span className="text-sage">{fmt(netBuyCost)}</span>
-            </div>
+            <ResultRow label="Total Cost of Buying" value={fmt(totalBuyCost)} />
+            <ResultRow label="— EMI Payments" value={fmt(totalEmi)} />
+            <ResultRow label="— Down Payment" value={fmt(downAmt)} />
+            <ResultRow label="— Registration & Stamp (est. 7%)" value={fmt(regCost)} />
+            <ResultRow label="Less: Property Value" value={fmt(futureVal)} />
+            <ResultRow label="Net Cost of Buying" value={fmt(netBuyCost)} highlight />
             <div className="h-4" />
-            <Row label="Total Rent Paid" value={fmt(totalRent)} />
-            <Row label="Investment Returns (12%)" value={fmt(investGain)} />
-            <div className="flex justify-between pt-3 mt-2 border-t-[1.5px] border-gray-300 font-bold text-[15px] text-ink">
-              <span>Net Cost of Renting</span><span className="text-sage">{fmt(netRentCost)}</span>
-            </div>
+            <ResultRow label="Total Rent Paid" value={fmt(totalRent)} />
+            <ResultRow label={`Investment Returns (${equityReturn}%)`} value={fmt(investGain)} />
+            <ResultRow label="Net Cost of Renting" value={fmt(netRentCost)} highlight />
+          </div>
+          <div className="mt-4 text-[12px] text-gray-400 tracking-[-0.01em]">
+            Registration & stamp duty estimated at 7%.{" "}
+            <Link href="/tools/stamp-duty-calculator" className="text-sage underline hover:text-sage-deep transition-colors">
+              Use our Stamp Duty Calculator
+            </Link>{" "}
+            for exact numbers.
           </div>
           {calculated && (
-            <div className={`mt-5 p-4 rounded-[12px] text-[14px] leading-relaxed tracking-[-0.01em] ${buyWins ? "bg-sage-light text-sage-deep" : "bg-[#FFF3E0] text-[#E65100]"}`}>
+            <VerdictBox variant={buyWins ? "positive" : "warning"}>
               {buyWins
                 ? `At ${appreciation}% annual appreciation, buying makes financial sense over ${years} years.`
-                : `Renting + investing the difference in equity mutual funds (12% CAGR) creates more wealth than buying at current prices.`}
-            </div>
+                : `Renting + investing the difference in equity mutual funds (${equityReturn}% CAGR) creates more wealth than buying at current prices.`}
+            </VerdictBox>
           )}
         </div>
       </div>
-    </div>
-  );
-}
-
-function Field({ label, value, onChange, step, min, max }: { label: string; value: number; onChange: (v: number) => void; step?: number; min?: number; max?: number }) {
-  return (
-    <div>
-      <label className="block text-[13px] font-semibold text-gray-600 mb-1.5 tracking-[-0.01em]">{label}</label>
-      <input type="number" value={value} onChange={(e) => onChange(+e.target.value)} step={step} min={min} max={max} className="w-full px-[18px] py-3.5 border-[1.5px] border-gray-300 rounded-[12px] text-[15px] bg-white text-ink focus:outline-none focus:border-ink focus:shadow-[0_0_0_3px_rgba(13,13,13,0.06)] transition-all tracking-[-0.01em]" />
-    </div>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex justify-between py-2 text-[14px] text-gray-500 tracking-[-0.01em]">
-      <span>{label}</span><span className="font-semibold text-ink">{value}</span>
     </div>
   );
 }
