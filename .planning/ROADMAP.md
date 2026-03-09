@@ -111,12 +111,13 @@ Plans:
   1. Blog has 300+ published posts across all categories (Investment Strategy, City Guides, NRI Corner, Tax & Legal, Builder Analysis, Market Data, Due Diligence, First-Time Buyers)
   2. Posts cover all major Indian cities (Mumbai, Bangalore, Hyderabad, Pune, Chennai, Delhi NCR, Chandigarh Tri-City, Gurgaon, Noida)
   3. Each post has a target keyword, meta description, proper header structure, and internal links to relevant tools and frameworks pages
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
-- [ ] 06-03: TBD
+- [ ] 06-01-PLAN.md — City Guides (~50 posts) + Investment Strategy (~30 posts) across all 9 cities
+- [ ] 06-02-PLAN.md — NRI Corner (~25 posts) + Tax & Legal (~25 posts) + First-Time Buyers (~30 posts)
+- [ ] 06-03-PLAN.md — Builder Analysis (~25 posts) + Market Data (~30 posts) + Due Diligence (~25 posts)
+- [ ] 06-04-PLAN.md — Gap-fill, cross-category comparisons, seasonal content (~70 posts) + final validation
 
 ## Progress
 
@@ -130,4 +131,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 3. UX & Design Polish | 3/3 | Complete   | 2026-03-08 |
 | 4. Blog Engine | 2/2 | Complete   | 2026-03-09 |
 | 5. Interactive Tools | 3/3 | Complete   | 2026-03-09 |
-| 6. Content at Scale | 0/3 | Not started | - |
+| 6. Content at Scale | 0/4 | Not started | - |
