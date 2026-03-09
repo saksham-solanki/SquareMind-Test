@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
-import FilterPills from "@/components/FilterPills";
-import { posts } from "@/lib/posts";
+import BlogGrid from "@/components/BlogGrid";
+import { getAllPosts } from "@/lib/mdx";
 
 export const metadata: Metadata = {
   title: "Real Estate Investment Insights & Analysis — SquareMind Blog",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   },
 };
 
-const categories = ["All", "Investment Strategy", "Dark Truths", "NRI Corner", "City Guides", "Tax & Legal", "Builder Analysis", "Market Data"];
-
 export default function InsightsPage() {
+  const posts = getAllPosts();
+
   return (
     <>
       <div className="mx-auto max-w-[1200px] px-6 lg:px-14 pt-5">
@@ -42,23 +42,8 @@ export default function InsightsPage() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <FilterPills categories={categories} />
+            <BlogGrid posts={posts.map((p) => ({ slug: p.slug, meta: p.meta }))} />
           </FadeUp>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {posts.map((post, i) => (
-              <FadeUp key={post.slug} delay={i * 0.05}>
-                <Link href={`/insights/${post.slug}`} className="block h-full">
-                  <div className="bg-cream rounded-[20px] p-9 max-lg:p-7 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-400 cursor-pointer h-full">
-                    <div className="text-[12px] font-semibold text-sage tracking-[0.06em] uppercase mb-3">{post.tag}</div>
-                    <div className="font-serif text-[21px] leading-[1.3] text-ink tracking-[-0.02em]">{post.title}</div>
-                    <div className="text-[14px] text-gray-500 mt-3 leading-[1.6]">{post.description.slice(0, 100)}…</div>
-                    <div className="text-[13px] text-gray-400 mt-4">{post.readTime} read • {post.views} views</div>
-                  </div>
-                </Link>
-              </FadeUp>
-            ))}
-          </div>
         </div>
       </section>
 
