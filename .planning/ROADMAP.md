@@ -96,12 +96,12 @@ Plans:
   2. New tools (Investment Scorecard, RERA Verifier, NRI Tax Calculator, EMI Calculator, Stamp Duty Calculator) are functional and produce accurate outputs
   3. Each tool has its own URL (/tools/rental-yield, /tools/emi-calculator, etc.) and the /tools page lists all tools with descriptions
   4. Tools work correctly on mobile devices
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
-- [ ] 05-03: TBD
+- [ ] 05-01-PLAN.md — Shared data layer (stamp duty, RERA portals, NRI tax, city benchmarks), reusable UI components, and tools listing page refactor
+- [ ] 05-02-PLAN.md — Fix 3 existing calculators + build EMI Calculator and Stamp Duty Calculator with individual route pages
+- [ ] 05-03-PLAN.md — Build Investment Scorecard, RERA Verifier, and NRI Tax Calculator with individual route pages
 
 ### Phase 6: Content at Scale
 **Goal**: The blog has 300+ SEO-optimized posts covering all major Indian real estate topics, cities, and buyer segments, with internal linking to tools and frameworks
