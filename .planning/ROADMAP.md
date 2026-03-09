@@ -129,5 +129,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 2. Site-Wide Forms & Analytics | 3/3 | Complete   | 2026-03-08 |
 | 3. UX & Design Polish | 3/3 | Complete   | 2026-03-08 |
 | 4. Blog Engine | 2/2 | Complete   | 2026-03-09 |
-| 5. Interactive Tools | 1/3 | In Progress | - |
+| 5. Interactive Tools | 2/3 | In Progress|  |
 | 6. Content at Scale | 0/3 | Not started | - |

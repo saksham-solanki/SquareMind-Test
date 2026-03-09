@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in-progress
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-03-09T05:13:37Z"
-last_activity: 2026-03-09 -- Completed 05-01 (Data Layer, Shared Components & Tools Listing)
+status: executing
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-03-09T06:02:43.746Z"
+last_activity: 2026-03-09 -- Completed 05-02 (Core Financial Calculators)
 progress:
   total_phases: 6
   completed_phases: 4
   total_plans: 14
-  completed_plans: 12
-  percent: 86
+  completed_plans: 13
+  percent: 93
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-08)
 ## Current Position
 
 Phase: 5 of 6 (Interactive Tools) -- IN PROGRESS
-Plan: 1 of 3 in current phase (05-01 complete)
+Plan: 2 of 3 in current phase (05-02 complete)
 Status: Phase 5 In Progress
-Last activity: 2026-03-09 -- Completed 05-01 (Data Layer, Shared Components & Tools Listing)
+Last activity: 2026-03-09 -- Completed 05-02 (Core Financial Calculators)
 
-Progress: [████████░░] 86% (Overall)
+Progress: [█████████░] 93% (Overall)
 
 ## Performance Metrics
 
@@ -62,6 +62,7 @@ Progress: [████████░░] 86% (Overall)
 | Phase 04 P01 | 2min | 2 tasks | 18 files |
 | Phase 04 P02 | 2min | 2 tasks | 5 files |
 | Phase 05 P01 | 4min | 2 tasks | 11 files |
+| Phase 05 P02 | 4min | 2 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -99,6 +100,8 @@ Recent decisions affecting current work:
 - [Phase 04]: Dynamic MDX import via @content alias for component-based rendering
 - [Phase 05]: Lucide icon map in tools page instead of dynamic imports for simplicity and type safety
 - [Phase 05]: ToolPageWrapper kept as Server Component for SEO-friendly tool pages
+- [Phase 05]: EMI amortization schedule aggregated by year (not month) with collapsible toggle for manageable table size
+- [Phase 05]: Stamp Duty comparison table shows top 5 investment states for contextual reference
 
 ### Pending Todos
 
@@ -112,6 +115,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T05:13:37Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-03-09T06:02:43.744Z
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None

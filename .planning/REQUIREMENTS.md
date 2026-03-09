@@ -81,14 +81,14 @@ Requirements for the full revamp. Each maps to roadmap phases.
 
 ### Interactive Tools
 
-- [ ] **TOOL-01**: Fix existing Rental Yield Calculator (verify calculations, improve UX, add Indian city benchmarks)
-- [ ] **TOOL-02**: Fix existing Buy vs Rent Calculator (verify assumptions, improve inputs)
-- [ ] **TOOL-03**: Fix existing Total Cost Calculator (verify stamp duty rates by state, update for 2026)
+- [x] **TOOL-01**: Fix existing Rental Yield Calculator (verify calculations, improve UX, add Indian city benchmarks)
+- [x] **TOOL-02**: Fix existing Buy vs Rent Calculator (verify assumptions, improve inputs)
+- [x] **TOOL-03**: Fix existing Total Cost Calculator (verify stamp duty rates by state, update for 2026)
 - [ ] **TOOL-04**: Build Investment Scorecard tool (input property details → get A/B/C/D investment grade)
 - [ ] **TOOL-05**: Build RERA Project Verifier tool (check RERA registration status, builder compliance)
 - [ ] **TOOL-06**: Build NRI Tax Calculator (tax implications by country of residence: India, US, UK, Canada, UAE, Singapore, Australia)
-- [ ] **TOOL-07**: Build EMI Calculator (loan amount, interest rate, tenure → monthly EMI + amortization)
-- [ ] **TOOL-08**: Build Stamp Duty Calculator (state-wise stamp duty + registration charges)
+- [x] **TOOL-07**: Build EMI Calculator (loan amount, interest rate, tenure → monthly EMI + amortization)
+- [x] **TOOL-08**: Build Stamp Duty Calculator (state-wise stamp duty + registration charges)
 - [x] **TOOL-09**: Each tool has its own URL (/tools/rental-yield, /tools/emi-calculator, etc.) for SEO
 - [x] **TOOL-10**: Tools section page lists all tools with descriptions and links
 
@@ -193,14 +193,14 @@ Deferred to future release. Tracked but not in current roadmap.
 | BLOG-08 | Phase 4 | Complete |
 | NEWS-01 | Phase 2 | Complete |
 | NEWS-02 | Phase 2 | Complete |
-| TOOL-01 | Phase 5 | Pending |
-| TOOL-02 | Phase 5 | Pending |
-| TOOL-03 | Phase 5 | Pending |
+| TOOL-01 | Phase 5 | Complete |
+| TOOL-02 | Phase 5 | Complete |
+| TOOL-03 | Phase 5 | Complete |
 | TOOL-04 | Phase 5 | Pending |
 | TOOL-05 | Phase 5 | Pending |
 | TOOL-06 | Phase 5 | Pending |
-| TOOL-07 | Phase 5 | Pending |
-| TOOL-08 | Phase 5 | Pending |
+| TOOL-07 | Phase 5 | Complete |
+| TOOL-08 | Phase 5 | Complete |
 | TOOL-09 | Phase 5 | Complete |
 | TOOL-10 | Phase 5 | Complete |
 | CONT-01 | Phase 6 | Pending |
