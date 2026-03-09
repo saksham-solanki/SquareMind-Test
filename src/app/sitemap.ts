@@ -1,8 +1,15 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/mdx";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://squaremind.in";
   const now = new Date();
+
+  const blogEntries: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: `${baseUrl}/insights/${post.slug}`,
+    lastModified: new Date(post.meta.publishedAt),
+    priority: 0.7,
+  }));
 
   return [
     // Homepage
@@ -21,6 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/properties`, lastModified: now, priority: 0.8 },
     { url: `${baseUrl}/case-studies`, lastModified: now, priority: 0.8 },
     { url: `${baseUrl}/faq`, lastModified: now, priority: 0.8 },
+
+    // Blog posts
+    ...blogEntries,
 
     // Legal pages
     { url: `${baseUrl}/privacy`, lastModified: now, priority: 0.3 },
