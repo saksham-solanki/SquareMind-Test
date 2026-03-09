@@ -42,9 +42,19 @@ const CATEGORY_PRIORITY = [
   'Dark Truths',
 ];
 
-const API_URL = 'https://api.anthropic.com/v1/messages';
-const API_MODEL = 'claude-sonnet-4-20250514';
-const API_MAX_TOKENS = 16000;
+// API provider config — auto-detected from available keys
+const PROVIDERS = {
+  anthropic: {
+    url: 'https://api.anthropic.com/v1/messages',
+    model: 'claude-sonnet-4-20250514',
+    maxTokens: 16000,
+  },
+  openai: {
+    url: 'https://api.openai.com/v1/chat/completions',
+    model: 'gpt-4o',
+    maxTokens: 16000,
+  },
+};
 
 // ---------------------------------------------------------------------------
 // Argument parsing
@@ -89,16 +99,27 @@ function countWords(text) {
   return text.split(/\s+/).filter(Boolean).length;
 }
 
-function loadApiKey() {
-  if (process.env.ANTHROPIC_API_KEY) return process.env.ANTHROPIC_API_KEY;
-
+function loadApiConfig() {
+  let envContent = '';
   try {
-    const envContent = fs.readFileSync(ENV_PATH, 'utf8');
-    const match = envContent.match(/^ANTHROPIC_API_KEY=(.+)$/m);
-    if (match) return match[1].trim().replace(/^["']|["']$/g, '');
+    envContent = fs.readFileSync(ENV_PATH, 'utf8');
   } catch {
     // .env.local doesn't exist
   }
+
+  function getKey(envName) {
+    if (process.env[envName]) return process.env[envName];
+    const match = envContent.match(new RegExp(`^${envName}=(.+)$`, 'm'));
+    if (match) return match[1].trim().replace(/^["']|["']$/g, '');
+    return null;
+  }
+
+  // Prefer Anthropic, fall back to OpenAI
+  const anthropicKey = getKey('ANTHROPIC_API_KEY');
+  if (anthropicKey) return { provider: 'anthropic', apiKey: anthropicKey, ...PROVIDERS.anthropic };
+
+  const openaiKey = getKey('OPENAI_API_KEY');
+  if (openaiKey) return { provider: 'openai', apiKey: openaiKey, ...PROVIDERS.openai };
 
   return null;
 }
@@ -336,22 +357,43 @@ function buildPrompt(template, post, linkMap) {
 // API call
 // ---------------------------------------------------------------------------
 
-async function callClaudeAPI(apiKey, prompt) {
-  const body = {
-    model: API_MODEL,
-    max_tokens: API_MAX_TOKENS,
-    system:
-      'You are a senior real estate content writer for SquareMind, an Indian real estate advisory firm. Follow the rewrite instructions exactly.',
-    messages: [{ role: 'user', content: prompt }],
-  };
+async function callLLMAPI(config, prompt) {
+  const systemMsg =
+    'You are a senior real estate content writer for SquareMind, an Indian real estate advisory firm. Follow the rewrite instructions exactly.';
 
-  const response = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'x-api-key': apiKey,
+  let body, headers;
+
+  if (config.provider === 'anthropic') {
+    body = {
+      model: config.model,
+      max_tokens: config.maxTokens,
+      system: systemMsg,
+      messages: [{ role: 'user', content: prompt }],
+    };
+    headers = {
+      'x-api-key': config.apiKey,
       'anthropic-version': '2023-06-01',
       'content-type': 'application/json',
-    },
+    };
+  } else {
+    // OpenAI-compatible
+    body = {
+      model: config.model,
+      max_tokens: config.maxTokens,
+      messages: [
+        { role: 'system', content: systemMsg },
+        { role: 'user', content: prompt },
+      ],
+    };
+    headers = {
+      Authorization: `Bearer ${config.apiKey}`,
+      'content-type': 'application/json',
+    };
+  }
+
+  const response = await fetch(config.url, {
+    method: 'POST',
+    headers,
     body: JSON.stringify(body),
   });
 
@@ -362,20 +404,26 @@ async function callClaudeAPI(apiKey, prompt) {
 
   const data = await response.json();
 
-  if (!data.content || !data.content[0] || !data.content[0].text) {
-    throw new Error('Unexpected API response structure');
+  if (config.provider === 'anthropic') {
+    if (!data.content || !data.content[0] || !data.content[0].text) {
+      throw new Error('Unexpected Anthropic API response structure');
+    }
+    return data.content[0].text;
+  } else {
+    if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+      throw new Error('Unexpected OpenAI API response structure');
+    }
+    return data.choices[0].message.content;
   }
-
-  return data.content[0].text;
 }
 
 // ---------------------------------------------------------------------------
 // Rewrite a single post
 // ---------------------------------------------------------------------------
 
-async function rewritePost(post, apiKey, promptTemplate, linkMap) {
+async function rewritePost(post, apiConfig, promptTemplate, linkMap) {
   const prompt = buildPrompt(promptTemplate, post, linkMap);
-  const newContent = await callClaudeAPI(apiKey, prompt);
+  const newContent = await callLLMAPI(apiConfig, prompt);
   const newWordCount = countWords(newContent);
 
   // Update readTime based on new word count
@@ -436,12 +484,13 @@ async function main() {
     return;
   }
 
-  // Load API key
-  const apiKey = loadApiKey();
-  if (!apiKey) {
+  // Load API config
+  const apiConfig = loadApiConfig();
+  if (!apiConfig) {
     console.error(
-      'Error: ANTHROPIC_API_KEY not found.\n' +
-        'Set it in .env.local or as an environment variable:\n' +
+      'Error: No API key found.\n' +
+        'Set ANTHROPIC_API_KEY or OPENAI_API_KEY in .env.local:\n' +
+        '  echo "OPENAI_API_KEY=sk-proj-..." >> .env.local\n' +
         '  echo "ANTHROPIC_API_KEY=sk-ant-..." >> .env.local'
     );
     process.exit(1);
@@ -451,7 +500,8 @@ async function main() {
   const linkMap = loadLinkMap();
   const promptTemplate = loadPromptTemplate();
 
-  console.log(`\n  Rewriting ${selected.length} posts...\n`);
+  console.log(`\n  Using ${apiConfig.provider} (${apiConfig.model})`);
+  console.log(`  Rewriting ${selected.length} posts...\n`);
 
   const results = { success: 0, failed: 0, failures: [], totalNewWords: 0 };
 
@@ -463,7 +513,7 @@ async function main() {
       console.log(`${progress} Rewriting: ${post.slug} (${post.category})...`);
       const { oldWords, newWords } = await rewritePost(
         post,
-        apiKey,
+        apiConfig,
         promptTemplate,
         linkMap
       );
