@@ -89,8 +89,8 @@ Requirements for the full revamp. Each maps to roadmap phases.
 - [ ] **TOOL-06**: Build NRI Tax Calculator (tax implications by country of residence: India, US, UK, Canada, UAE, Singapore, Australia)
 - [ ] **TOOL-07**: Build EMI Calculator (loan amount, interest rate, tenure → monthly EMI + amortization)
 - [ ] **TOOL-08**: Build Stamp Duty Calculator (state-wise stamp duty + registration charges)
-- [ ] **TOOL-09**: Each tool has its own URL (/tools/rental-yield, /tools/emi-calculator, etc.) for SEO
-- [ ] **TOOL-10**: Tools section page lists all tools with descriptions and links
+- [x] **TOOL-09**: Each tool has its own URL (/tools/rental-yield, /tools/emi-calculator, etc.) for SEO
+- [x] **TOOL-10**: Tools section page lists all tools with descriptions and links
 
 ### Content at Scale
 
@@ -201,8 +201,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | TOOL-06 | Phase 5 | Pending |
 | TOOL-07 | Phase 5 | Pending |
 | TOOL-08 | Phase 5 | Pending |
-| TOOL-09 | Phase 5 | Pending |
-| TOOL-10 | Phase 5 | Pending |
+| TOOL-09 | Phase 5 | Complete |
+| TOOL-10 | Phase 5 | Complete |
 | CONT-01 | Phase 6 | Pending |
 | CONT-02 | Phase 6 | Pending |
 | CONT-03 | Phase 6 | Pending |
