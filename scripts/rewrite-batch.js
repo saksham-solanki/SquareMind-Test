@@ -54,6 +54,11 @@ const PROVIDERS = {
     model: 'gpt-4o',
     maxTokens: 16000,
   },
+  perplexity: {
+    url: 'https://api.perplexity.ai/chat/completions',
+    model: 'sonar-pro',
+    maxTokens: 16000,
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -114,9 +119,12 @@ function loadApiConfig() {
     return null;
   }
 
-  // Prefer Anthropic, fall back to OpenAI
+  // Prefer Anthropic, then Perplexity, then OpenAI
   const anthropicKey = getKey('ANTHROPIC_API_KEY');
   if (anthropicKey) return { provider: 'anthropic', apiKey: anthropicKey, ...PROVIDERS.anthropic };
+
+  const perplexityKey = getKey('PERPLEXITY_API_KEY');
+  if (perplexityKey) return { provider: 'perplexity', apiKey: perplexityKey, ...PROVIDERS.perplexity };
 
   const openaiKey = getKey('OPENAI_API_KEY');
   if (openaiKey) return { provider: 'openai', apiKey: openaiKey, ...PROVIDERS.openai };
