@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" fill="none">
+  <!-- Icon: Square with analytical lens/aperture -->
+  <g>
+    <!-- Outer square with rounded corners -->
+    <rect x="2" y="2" width="52" height="52" rx="12" ry="12" fill="none" stroke="#0D0D0D" stroke-width="3.5"/>
+
+    <!-- Inner analytical eye/lens — four converging planes creating a diamond aperture -->
+    <!-- This represents "seeing clearly" — the mind's eye looking through data -->
+    <!-- Top-left blade -->
+    <path d="M14 14 L28 22 L22 28 Z" fill="#2A6F5A"/>
+    <!-- Top-right blade -->
+    <path d="M42 14 L34 28 L28 22 Z" fill="#2A6F5A" opacity="0.75"/>
+    <!-- Bottom-right blade -->
+    <path d="M42 42 L28 34 L34 28 Z" fill="#2A6F5A" opacity="0.55"/>
+    <!-- Bottom-left blade -->
+    <path d="M14 42 L22 28 L28 34 Z" fill="#2A6F5A" opacity="0.35"/>
+
+    <!-- Center dot — the focused point of clarity -->
+    <circle cx="28" cy="28" r="3" fill="#0D0D0D"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="68" y="39" font-family="'DM Sans', 'Inter', system-ui, -apple-system, sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#0D0D0D">Square</tspan><tspan fill="#2A6F5A">Mind</tspan>
+  </text>
+</svg>

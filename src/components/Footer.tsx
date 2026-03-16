@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 
 const footerCols = [
   {
@@ -38,9 +39,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-14">
           {/* Brand */}
           <div>
-            <div className="text-[22px] font-bold text-white tracking-[-0.5px]">
-              Square<span className="text-sage-muted">Mind</span>
-            </div>
+            <Logo variant="dark" iconSize={32} />
             <p className="text-[14px] leading-relaxed mt-3.5 max-w-[300px] tracking-[-0.01em]">
               India&apos;s first independent real estate investment advisory. We don&apos;t sell properties. We help you invest smarter.
             </p>

@@ -18,6 +18,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 const iconMap: Record<string, LucideIcon> = {
   TrendingUp,
@@ -93,8 +94,8 @@ export default function Navbar() {
       )}
     >
       <nav className="mx-auto max-w-[1200px] px-6 lg:px-14 flex items-center justify-between h-20">
-        <Link href="/" className="font-sans text-[22px] font-bold text-ink tracking-[-0.5px]">
-          Square<span className="text-sage">Mind</span>
+        <Link href="/" className="inline-flex items-center">
+          <Logo variant="light" iconSize={30} />
         </Link>
 
         {/* Desktop nav */}

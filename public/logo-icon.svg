@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+  <!-- SquareMind Icon Mark -->
+  <!-- A square with an analytical aperture inside — representing structured insight -->
+
+  <!-- Outer square with rounded corners -->
+  <rect x="2" y="2" width="52" height="52" rx="12" ry="12" fill="none" stroke="#0D0D0D" stroke-width="3.5"/>
+
+  <!-- Four converging planes — an aperture/lens motif -->
+  <!-- Represents focused analysis, seeing through noise to truth -->
+  <!-- The gradient of opacity (100% → 35%) creates a sense of rotation/dynamism -->
+
+  <!-- Top-left blade (full opacity — primary) -->
+  <path d="M14 14 L28 22 L22 28 Z" fill="#2A6F5A"/>
+  <!-- Top-right blade -->
+  <path d="M42 14 L34 28 L28 22 Z" fill="#2A6F5A" opacity="0.75"/>
+  <!-- Bottom-right blade -->
+  <path d="M42 42 L28 34 L34 28 Z" fill="#2A6F5A" opacity="0.55"/>
+  <!-- Bottom-left blade -->
+  <path d="M14 42 L22 28 L28 34 Z" fill="#2A6F5A" opacity="0.35"/>
+
+  <!-- Center dot — the focused point of clarity -->
+  <circle cx="28" cy="28" r="3" fill="#0D0D0D"/>
+</svg>
